@@ -1,3 +1,12 @@
+.filtered:hover {
+  filter: none !important;
+  transform: rotate(20deg);
+}
+
+.filtered {
+    transition-duration: 1s;
+}
+
 .blurred {
 
     filter: blur(8px);

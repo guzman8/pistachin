@@ -65,7 +65,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <div class="w3-bar-item w3-padding-24 w3-wide">Pistachin</div>
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 </header>
 
@@ -101,7 +101,6 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
     // When the user clicks the button, open the modal 
     btn.onclick = function() {
-        console.log("here we go")
         modal.style.display = "block";
     }
 
@@ -137,13 +136,13 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <div class="w3-col l3 s6">
       <div class="w3-container">
 
-            <img src="img/Conjunto1/1.png" style="width:100%" onclick="SaveItem('ripped jeans', '1')">
-            <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+            <img class="filtered" src="img/Conjunto1/1.png" style="width:100%" onclick="SaveItem('Conjunto 1 cuadros', '1')">
+            <p>Conjunto 1 cuadros<br><b>€24.99</b></p>
       
       </div>
       <div class="w3-container">
-        <img src="img/Conjunto1/2.png" style="width:100%">
-        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+        <img src="img/Conjunto1/2.png" style="width:100%" onclick="SaveItem('Conjunto 2 cuadros', '1')">
+        <p>Conjunto 2 cuadros<br><b>€19.99</b></p>
       </div>
     </div>
 
@@ -153,42 +152,42 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
           <img src="img/Conjunto1/3.png" style="width:100%">
           <span class="w3-tag w3-display-topleft">New</span>
           <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            <button class="w3-button w3-black" onclick="SaveItem('Conjunto 3 cuadros', '1')">Buy now <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+        <p>Conjunto 3 cuadros<br><b>€19.99</b></p>
       </div>
       <div class="w3-container">
-        <img src="img/Conjunto2/1.png" style="width:100%">
-        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+        <img src="img/Conjunto2/1.png" style="width:100%" onclick="SaveItem('Conjunto 1 bicolor', '1')">
+        <p>Cojunto 1 bicolor<br><b>€20.50</b></p>
       </div>
     </div>
 
     <div class="w3-col l3 s6">
       <div class="w3-container">
-        <img src="img/Conjunto2/2.png" style="width:100%">
-        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+        <img src="img/Conjunto2/2.png" style="width:100%" onclick="SaveItem('Conjunto 2 bicolor', '1')">
+        <p>Conjunto 2 bicolor<br><b>€20.50</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
           <img src="img/Conjunto3/1.png" style="width:100%">
           <span class="w3-tag w3-display-topleft">Sale</span>
           <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            <button class="w3-button w3-black" onclick="SaveItem('Cojunto 1 estampado', '1')">Buy now <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>
+        <p>Conjunto 1 estampado<br><b class="w3-text-red">€14.99</b></p>
       </div>
     </div>
 
     <div class="w3-col l3 s6">
       <div class="w3-container">
-        <img src="img/Conjunto3/2.png" style="width:100%">
-        <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
+        <img src="img/Conjunto3/2.png" style="width:100%" onclick="SaveItem('Conjunto 2 estampado', '1')">
+        <p>Conjunto 2 estampado<br><b>€14.99</b></p>
       </div>
       <div class="w3-container">
-        <img src="img/Conjunto4/1.png" style="width:100%">
-        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        <img src="img/Conjunto4/1.png" style="width:100%" onclick="SaveItem('Vestidos con bolantes', '1')">
+        <p>Vestidos con bolantes<br><b>€24.99</b></p>
       </div>
     </div>
   </div>
