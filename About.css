@@ -1,0 +1,71 @@
+.grid-container div img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 70%;
+    /*object-fit:fill;*/
+    border-radius: 50%;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#fund1{
+    grid-area: imgfund1;
+}
+#fund2{
+    grid-area: imgfund2;
+}
+#fund3{
+    grid-area: imgfund3;
+}
+
+#div1{
+    grid-area: desc1;
+}
+#div2{
+    grid-area: desc2;
+}
+#div3{
+    grid-area: desc3;
+}
+
+
+.grid-container {  
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 11px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "imgfund1 imgfund2 imgfund3"
+      "desc1 desc2 desc3";
+}
+
+@media (max-width: 800px){
+    .grid-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "imgfund1 desc1"
+            "imgfund2 desc2"
+            "imgfund3 desc3";
+    }
+    .grid-container div img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        width: 50%;
+        /*object-fit:fill;*/
+        border-radius: 50%;
+        
+    }
+}
