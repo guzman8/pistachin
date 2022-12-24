@@ -1,0 +1,145 @@
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 30; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/*hide and box design in the dropdown*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {/*estilo del dropdown menu*/
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropbtn { /*style dropbutton*/
+    background-color: #ffffff;
+    color: rgb(164, 164, 164);
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+  }
+  .dropbtn a{
+    color: rgb(164, 164, 164);
+  }
+  
+  /*hover function*/
+  .dropdown:hover .dropdown-content {display: block;}
+  /*hover dentro del dropdown*/
+  .dropdown-content a:hover {background-color: #ddd;}
+  /*hover dropbtn*/
+  .dropdown:hover .dropbtn {background-color: #d8d8d8;color: rgb(0, 0, 0);}
+  .dropdown:hover .dropbtn a {color: rgb(0, 0, 0);text-decoration: none;}
+
+
+.w3-sidebar a {font-family: "Quicksand", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Quicksand", "Quicksand";}
+
+.navbar-inverse {
+    background-color: #fff;
+    border-color: #ffffff;
+    }
+
+#top_logo{
+    height: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar{
+    margin-bottom: 0px;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    margin-bottom: -500px;
+    min-height:200px;
+
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 800px) {
+.carousel-caption {
+    display: none; 
+}
+.carousel-inner img {
+    margin-bottom: -200px;
+}
+}
+
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+
+.hover-underline-animation::after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color: #000000;/* #0087ca;*/
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+  

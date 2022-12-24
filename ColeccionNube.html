@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pistachin kids</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="index.css" rel="stylesheet">
+  <link href="ColeccionPana.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+  <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+      <span id="close-x" class="close">&times;</span>
+      <p>Your checkout:</p>
+      <div id="items_table">
+          <h2>Shopping List</h2>
+          <table id="list"></table>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> <!-- Identify your business so that you can collect the payments. --> 
+            <input type="hidden" name="business" value="herschelgomez@xyzzyu.com"> <!-- Specify a Buy Now button. -->
+            <input type="hidden" name="cmd" value="_xclick"> <!-- Specify details about the item that buyers will purchase. -->
+            <input type="hidden" name="item_name" value="Premium Umbrella">
+            <input type="hidden" name="amount" value="50.00">
+            <input type="hidden" name="currency_code" value="USD"> <!-- Prompt buyers to enter the quantities they want. --> 
+            <input type="hidden" name="undefined_quantity" value="1"> <!-- Display the payment button. --> 
+            <input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now">
+            <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >            
+          </form>
+          <div role="button" tabindex="0" class="kqsiVA9Jf8LJAbxw8Bau h7OYsWHrW5495r9beh2n DefhEHZZf4y32pvV7mZj MMkDzHILWhgVTH11kqqo" data-testid="ApplePay-button"><span class="Xrk_DudB6JJ3t2Kh2_cU"> Apple Pay</span><span class="ElVMgDjOgshGFMIvg3se"><svg preserveAspectRatio="xMidYMid" class="qZgSr5RiiBCTAMfQYsty" style="height: 20px; width: 45.26315789473684px;"><use xlink:href="#shopify-svg__payments-apple-pay-light"></use></svg></span></div>
+          <label><input type="button" value="Clear" onclick="ClearAll()">
+          * Delete all items</label>
+      </div>
+  </div>
+</div>
+
+
+<div><a href="index.html"><img id="top_logo" src="Logos/Logo.png" alt="Pistachin"></a></div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="nav-item dropdown">
+            <button class="dropbtn"><a class="hover-underline-animation" href="ColeccionNube.html">Colección Nube</a></button>
+            <div class="dropdown-content">
+              <a href="#" onclick="SaveItem('Ranita bebe nina', '1')">Ranita bebe niña</a>
+              <a href="#">peto bebe niño</a>
+              <a href="#">vestido niña</a>
+              <a href="#">camisa polera niño</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="dropbtn"><a class="hover-underline-animation" href="ColeccionCerdanya.html">Colección Cerdaña</a></button>
+          <div class="dropdown-content">
+            <a href="#">Ranita bebe niña</a>
+            <a href="#">Vestido niña</a>
+            <a href="#">Camisa polera body</a>
+            <a href="#">Camisa niño</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="dropbtn"><a class="hover-underline-animation" href="ColeccionPana.html">Colección Pana</a></button>
+          <div class="dropdown-content">
+            <a href="#">Pichi niña</a>
+            <a href="#">Peto</a>
+            <a href="#">Short</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="dropbtn" href="ColeccionPana.html">Contact</button>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="dropbtn" href="ColeccionPana.html">About</button>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="my_kart_btn" href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("my_kart_btn");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementById("close-x");
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+      modal.style.display = "block";
+  }
+
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+      modal.style.display = "none";
+      }
+  }
+</script>
+
+<div class="grid-container">
+  <div><img src="Coleccion nube/image0.png" alt=""></div>
+  <div><img src="Coleccion nube/image1.png" alt=""></div>
+  <div><img src="Coleccion nube/image2.png" alt=""></div>
+  <div><img src="Coleccion nube/image3.png" alt=""></div>
+  <div><img src="Coleccion nube/image4.jpeg" alt=""></div>
+  <div><img src="Coleccion nube/image9.jpeg" alt=""></div>
+  <div><img src="Coleccion nube/image6.jpeg" alt=""></div>
+  <div><img src="Coleccion nube/image13.jpeg" alt=""></div>
+  <div><img src="Coleccion nube/image8.jpeg" alt=""></div>
+  <div><img src="Coleccion nube/image5.jpeg" alt=""></div>
+  <div><img src="Coleccion nube/image10.jpeg" alt=""></div>
+  <div><img src="Coleccion nube/image11.jpeg" alt=""></div>
+
+
+</div>
+  
+<br>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
