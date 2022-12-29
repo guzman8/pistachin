@@ -139,7 +139,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Quicksand", "Quicksand";}
   .mobile-nav-toggle{
     display: block;
     position: absolute;
-    background: url(logos/hamburger-menu-icon.webp);
+    background: transparent;
+    background-image: url(logos/hamburger.png);
     background-size: contain;
     border: 0;
     background-repeat: no-repeat;
