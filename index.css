@@ -71,7 +71,7 @@
   /*hover dentro del dropdown*/
   .dropdown-content a:hover {background-color: #ddd;}
   /*hover dropbtn*/
-  .dropdown:hover .dropbtn {background-color: #d8d8d8;color: rgb(0, 0, 0);}
+  .dropdown:hover .dropbtn {color: rgb(0, 0, 0);}
   .dropdown:hover .dropbtn a {color: rgb(0, 0, 0);text-decoration: none;}
 
 
@@ -84,15 +84,89 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Quicksand", "Quicksand";}
     }
 
 #top_logo{
-    height: 40px;
+  height: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.primary-navigation{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: hsl (0 0% 0% / 0.75);
+
+
+}
+
+.primary-header{
+  align-items: center;
+  justify-content: right;
+}
+
+.mobile-nav-toggle{display: none;}
+
+@media (max-width: 35em){
+  .primary-navigation{
+    gap: 3em;
+    z-index: 1000;
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+    background: rgb(222, 187, 187);
+  }
+
+  @supports (backdrop-filter: blur(1rem)) {
+    .primary-navigation{
+      background: hsl (0 0% 100% / 0.1);
+      backdrop-filter: blur(1rem);
+    }
+  }
+
+  .primary-navigation[data-visible="true"]{
+    transform: translateX(0%);
+  }
+  
+  .mobile-nav-toggle[aria-expanded="true"]{
+    background-image: url(logos/close.png);
+  }
+
+  .mobile-nav-toggle{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    background: url(logos/hamburger-menu-icon.webp);
+    background-size: contain;
+    border: 0;
+    background-repeat: no-repeat;
+    width: 3rem;
+    aspect-ratio: 1;
+    z-index: 9999;
+    right: 2rem;
+    top: 2rem;
+
+  }
+
+  #shoppingCart{
+    left: 2rem;
+  }
 }
-/* Remove the navbar's default margin-bottom and rounded borders */ 
-.navbar{
-    margin-bottom: 0px;
+
+#shoppingCart{
+  display: block;
+  position: absolute;
+  aspect-ratio: 1;
+  width: 3rem;
+  top: 2rem;
+  right: 2rem;
+
 }
+
+
 
 /* Add a gray background color and some padding to the footer */
 footer {
@@ -141,5 +215,10 @@ transition: transform 0.25s ease-out;
 .hover-underline-animation:hover::after {
 transform: scaleX(1);
 transform-origin: bottom left;
+}
+
+.flex{
+  display: flex;
+  gap: 1rem;
 }
   
