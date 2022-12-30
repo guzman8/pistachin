@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="index.css" rel="stylesheet">
-  <link href="ColeccionPana.css" rel="stylesheet">
+  <link href="../index.css" rel="stylesheet">
+  <link href="ranita.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-  <script src="index.js" defer></script>
+  <script src="../index.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
@@ -41,19 +41,19 @@
 </div>
 
 
-<div><img id="top_logo" src="logos/Logo.png" alt="Pistachin"></div>
+<div><img id="top_logo" src="../logos/Logo.png" alt="Pistachin"></div>
 <header class="primary-header">
   <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
     <span class="sr-only">Menu</span>                 
   </button>
   <nav>
-    <a id="my_kart_btn" href="#"><img id="shoppingCart" src="logos/cart.png"></a>
+    <a id="my_kart_btn" href="#"><img id="shoppingCart" src="../logos/cart.png"></a>
     <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="index.html">00 Home</a></button>
+        <button class="dropbtn hover-underline-animation"><a href="../index.html">00 Home</a></button>
     </li>
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="ColeccionNube.html">01 Colección Nube</a></button>
+        <button class="dropbtn hover-underline-animation"><a href="../ColeccionNube.html">01 Colección Nube</a></button>
         <div class="dropdown-content">
           <a href="#" onclick="SaveItem('Ranita bebe nina', '1')">Ranita bebe niña</a>
           <a href="#">peto bebe niño</a>
@@ -62,7 +62,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="ColeccionCerdanya.html">02 Colección Cerdaña</a></button>
+        <button class="dropbtn hover-underline-animation"><a href="../ColeccionCerdanya.html">02 Colección Cerdaña</a></button>
         <div class="dropdown-content">
           <a href="#">Ranita bebe niña</a>
           <a href="#">Vestido niña</a>
@@ -71,7 +71,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="ColeccionPana.html">03 Colección Pana</a></button>
+        <button class="dropbtn hover-underline-animation"><a href="../ColeccionPana.html">03 Colección Pana</a></button>
         <div class="dropdown-content">
             <a href="#">Pichi niña</a>
             <a href="#">Peto</a>
@@ -79,10 +79,10 @@
         </div>
         </li>
         <li class="nav-item dropdown">
-            <button class="dropbtn hover-underline-animation"><a href="Contact.html">04 Contacto</a></button>
+            <button class="dropbtn hover-underline-animation"><a href="../Contact.html">04 Contacto</a></button>
         </li>
         <li class="nav-item dropdown">
-            <button class="dropbtn hover-underline-animation"><a href="About.html">05 About us</a></button>
+            <button class="dropbtn hover-underline-animation"><a href="../About.html">05 About us</a></button>
         </li>
     </ul>
   </nav>
@@ -115,27 +115,26 @@
   }
 </script>
 
-<div class="container">
-  <h1>Formulario de contacto</h1>
-  <form target="_blank" action="https://formsubmit.co/d2894ee02305119387ccd4546ba8ae82" method="POST">
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col">
-          <input type="text" name="name" class="form-control" placeholder="Nombre completo" required>
-        </div>
-        <div class="col">
-          <input type="email" name="email" class="form-control" placeholder="direccion de correo" required>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <textarea placeholder="Tu mensaje" class="form-control" name="message" rows="10" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
-  </form>
+<div class="grid-container">
+  <div class="item1"></div>  
+  <div class="item2">
+  	<div><p style="font-size: 30px;">Conjunto Ranita</p><p style="font-size: 20px;">Coleccion Cerdaña</p> </div><br>
+      
+    	<span>
+          Elige talla:
+          <select name="size" id="size">
+            <option value="volvo">6 meses</option>
+            <option value="saab">12 meses</option>
+            <option value="opel">18 meses</option>
+            <option value="audi">24 meses</option>
+          </select>
+         </span>
+         <br><br><br>
+         <button onclick="SaveItem('Ranita bebe (coleccion cerdanya)', '2') ">añadir al carrito</button>
+  	</div>
+  <div class="item3">Footer</div>
 </div>
-
-
+  
 <br>
 
 <footer class="container-fluid text-center">
