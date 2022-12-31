@@ -1,5 +1,3 @@
-
-
 // Dynamically populate the table with shopping list items.
 //Step below can be done via PHP and AJAX, too.
 function doShowAll() {
@@ -77,6 +75,20 @@ navToggle.addEventListener('click', () => {
     console.log(visibility2)
 });
 
+var curentCollection = '01';
+var currentCloth = '01';
+//var storeCol = sessionStorage.coleccion;
+//var storeClo = sessionStorage.cloth;
+
+function setSellImages(coleccion, cloth){
+    console.log("vamos a poner las imagenes a punto");
+    localStorage.setItem("Collection", coleccion);   
+    localStorage.setItem("Cloth", cloth);
+    console.log(localStorage.Cloth);
+    storeCol = coleccion;
+    storeClo = cloth;
+    
+}
 
 
 
