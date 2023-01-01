@@ -7,6 +7,13 @@
   background-position-x: center;
 }
 
+.copy{
+  background-image: url(image1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 10em;
+}
+
 .item2 { grid-area: righty; }
 .item3 { grid-area: footer; text-align: center;}
 

@@ -133,14 +133,14 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Quicksand", "Quicksand";}
   }
   
   .mobile-nav-toggle[aria-expanded="true"]{
-    background-image: url(logos/close.png);
+    background-image: url(Logos/close.png);
   }
 
   .mobile-nav-toggle{
     display: block;
     position: absolute;
     background: transparent;
-    background-image: url(logos/hamburger.png);
+    background-image: url(Logos/hamburger.png);
     background-size: contain;
     border: 0;
     background-repeat: no-repeat;
