@@ -13,10 +13,10 @@ console.log(localStorage.Collection);
 
 document.getElementById('item1').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/01.jpeg')";
 document.getElementById('copy1').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/01.jpeg')";
-document.getElementById('copy2').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/01.jpeg')";
-document.getElementById('copy3').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/01.jpeg')";
-document.getElementById('copy4').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/01.jpeg')";
-document.getElementById('copy5').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/01.jpeg')";
+document.getElementById('copy2').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/02.jpeg')";
+document.getElementById('copy3').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/03.jpeg')";
+document.getElementById('copy4').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/04.jpeg')";
+document.getElementById('copy5').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/05.jpeg')";
 console.log(curentCollection, currentCloth, document.getElementById('item1').style.backgroundImage);
 
 function setNextPic(){
@@ -25,4 +25,8 @@ function setNextPic(){
     var currentPicConvertida = ((currentPic)%5)+1;
     var textPic = "0"+currentPicConvertida
     document.getElementById('item1').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/"+textPic+".jpeg')";
+}
+
+function setPic(pic){
+    document.getElementById('item1').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/"+pic+".jpeg')";
 }
