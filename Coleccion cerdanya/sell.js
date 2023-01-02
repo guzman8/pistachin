@@ -30,3 +30,20 @@ function setNextPic(){
 function setPic(pic){
     document.getElementById('item1').style.backgroundImage = "url('..//"+curentCollection+"/"+currentCloth+"/"+pic+".jpeg')";
 }
+
+const primaryNav = document.querySelector('.primary-navigation');
+const navToggle = document.querySelector('.mobile-nav-toggle');
+
+navToggle.addEventListener('click', () => {
+    const visibility = primaryNav.getAttribute("data-visible");
+    console.log(visibility);
+    if (visibility === "false"){
+        primaryNav.setAttribute("data-visible",true);
+        navToggle.setAttribute("aria-expanded", true);
+    }else{
+        primaryNav.setAttribute("data-visible",false);
+        navToggle.setAttribute("aria-expanded",false);
+    }
+    const visibility2 = primaryNav.getAttribute("data-visible");
+    console.log(visibility2)
+});
