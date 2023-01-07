@@ -49,6 +49,14 @@
       "desc1 desc2 desc3";
 }
 
+.description{
+    padding-left: 1em;
+}
+
+.grid-container h1{
+    text-align: center;
+}
+
 @media (max-width: 800px){
     .grid-container{
         grid-template-columns: 1fr 1fr;
@@ -67,5 +75,9 @@
         /*object-fit:fill;*/
         border-radius: 50%;
         
+    }
+    .description{
+        padding-left: 0em;
+        padding-right: 1em;
     }
 }

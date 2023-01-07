@@ -1,5 +1,7 @@
 // Dynamically populate the table with shopping list items.
 //Step below can be done via PHP and AJAX, too.
+doShowAll()
+
 function doShowAll() {
     if (true) {
         var key = "";
@@ -8,8 +10,10 @@ function doShowAll() {
         //For a more advanced feature, you can set a cap on max items in the cart.
         for (i = 0; i <= localStorage.length-1; i++) {
             key = localStorage.key(i);
-            list += "<tr><td>" + key + "</td>\n<td>"
+            if(key != 'Cloth' && key != 'Collection'){
+                list += "<tr><td>" + key + "</td>\n<td>"
                     + localStorage.getItem(key) + "</td></tr>\n";
+            }
         }
         //If no item exists in the cart.
         if (list == "<tr><th>Item</th><th>Value</th></tr>\n") {
