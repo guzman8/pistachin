@@ -5,20 +5,21 @@ doShowAll()
 function doShowAll() {
     if (true) {
         var key = "";
-        var list = "<tr><th>Item</th><th>Value</th></tr>\n";
+        var list = "<table><tr><th>Item</th><th>Ammount</th><th>Value</th></tr>";
         var i = 0;
         //For a more advanced feature, you can set a cap on max items in the cart.
         for (i = 0; i <= localStorage.length-1; i++) {
             key = localStorage.key(i);
             if(key != 'Cloth' && key != 'Collection'){
-                list += "<tr><td>" + key + "</td>\n<td>"
-                    + localStorage.getItem(key) + "</td></tr>\n";
+                list += "<tr><td>" + key + "</td><td>"
+                    + localStorage.getItem(key) + "</td><td>20€</td></tr>";
             }
         }
         //If no item exists in the cart.
-        if (list == "<tr><th>Item</th><th>Value</th></tr>\n") {
-            list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
+        if (list == "<table><tr><th>Item</th><th>Ammount</th><th>Value</th></tr>") {
+            list += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
         }
+        list += "</table>";
         //Bind the data to HTML table.
         //You can use jQuery, too.
         document.getElementById('list').innerHTML = list;
