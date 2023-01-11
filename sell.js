@@ -1,10 +1,12 @@
 const Collections = ["empty","Nube", "Bosque", "Cerdanya","Pana"];
-const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"]]
+const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"]];
+const Prices = [["empty"],["empty","24.9","19.9","29.9","19.9"]];
 
 //var storeClo = sessionStorage.cloth;
 var currentPic = 50;
 var currentCloth = localStorage.Cloth;
 var curentCollection = localStorage.Collection;
+localStorage.setItem("payAmount", "27");
 //console.log("storeCloth is:")
 //console.log(storeClo);
 console.log("storeCollection is:")
@@ -62,19 +64,26 @@ doShowAll()
 function doShowAll() {
     if (true) {
         var key = "";
-        var list = "<table><tr><th>Item</th><th>Ammount</th><th>Value</th></tr>";
+        var priceKey = "";
+        var summ = 0.0;
+        var list = "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>";
         var i = 0;
         //For a more advanced feature, you can set a cap on max items in the cart.
         for (i = 0; i <= localStorage.length-1; i++) {
             key = localStorage.key(i);
-            if(key != 'Cloth' && key != 'Collection'){
+            if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){
+                priceKey = "$" + key;
                 list += "<tr><td>" + key + "</td><td>"
-                    + localStorage.getItem(key) + "</td><td>20€</td></tr>";
+                    + localStorage.getItem(key) + "</td><td>" + localStorage.getItem(priceKey) + "€</td><td>" + Math.round(parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key))* 100) / 100 + "€</td></tr>";
+                summ += parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key));
             }
         }
+        localStorage.setItem("payAmount",summ);
         //If no item exists in the cart.
-        if (list == "<table><tr><th>Item</th><th>Ammount</th><th>Value</th></tr>") {
-            list += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
+        if (list == "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>") {
+            list += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
+        }else{
+            list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + Math.round(summ * 100) / 100 + "€</i></td></tr>"
         }
         list += "</table>";
         //Bind the data to HTML table.
@@ -90,7 +99,7 @@ function SaveItem() {
     
     var itemSizeSelector = document.getElementById("itemSize");
     var itemSize = itemSizeSelector.value;
-    var name = Cloths[parseInt(curentCollection)][parseInt(currentCloth)] + "(" + Collections[parseInt(curentCollection)] + ")" + " - " +itemSize;
+    var name = Cloths[parseInt(curentCollection)][parseInt(currentCloth)] + "(coleccion: " + Collections[parseInt(curentCollection)] + ")" + " - " +itemSize;
     console.log(name)
     var itemAmountSelector = document.getElementById("itemAmount")
     var amount = itemAmountSelector.value
@@ -104,6 +113,8 @@ function SaveItem() {
     }
 
     localStorage.setItem(name, amount);
+    var cashname = "$"+name;
+    localStorage.setItem(cashname,Prices[parseInt(curentCollection)][parseInt(currentCloth)]);
     doShowAll();
 
 }
@@ -145,4 +156,15 @@ function setSellImages(coleccion, cloth){
     storeClo = cloth;
     
 }
+
+
+//
+//
+// paypal
+//
+//
+
+
+// base URL will need to change for production applications
+
 
