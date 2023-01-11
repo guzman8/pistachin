@@ -157,6 +157,8 @@ function setSellImages(coleccion, cloth){
     
 }
 
+document.getElementById('htmlConjunto').innerHTML = Cloths[parseInt(curentCollection)][parseInt(currentCloth)];
+document.getElementById('htmlColeccion').innerHTML = "Colección " + Collections[parseInt(curentCollection)]
 
 //
 //
