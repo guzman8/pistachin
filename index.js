@@ -192,7 +192,7 @@ paypal.Buttons({
         Email.send({
             SecureToken : "60b0f47a-3c6d-47a3-b2dc-97e48f6481b4",
             To : direccionCliente,
-            From : 'info@pistachin.shop',
+            From : 'guzmangalofre@gmail.com',
             Subject : "Confirmación de compra en pistachin",
             Body : "Hola" + nombrepila + ", tu compra en Pistachin.shop se ha confirmado, enseguida que hayamos procesado el pago te contactaremos con la información de seguimiento del envío"
         }).then(
@@ -200,8 +200,8 @@ paypal.Buttons({
         );
         Email.send({
             SecureToken : "60b0f47a-3c6d-47a3-b2dc-97e48f6481b4",
-            To : "info@pistachin.shop",
-            From : 'info@pistachin.shop',
+            To : 'info@psicologiabcn.org',
+            From : 'guzmangalofre@gmail.com',
             Subject : "Nueva compra de: "+nombrepila,
             Body : "compra de:" + paypalItems2.filter(name => name[0]!= '$' && name != 'Cloth' || 'Collection' || 'payAmount' || '__paypal_storage__')
         }).then(
