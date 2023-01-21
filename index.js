@@ -10,9 +10,9 @@ console.log(paypalItems[0].name);*/
 
 const clone = (items) => items.map(item => Array.isArray(item) ? clone(item) : item);
 
-var nestedArray = doShowAll();
-var paypalItems2 = clone(nestedArray)
-console.log(paypalItems2);
+
+var lista =  doShowAll();
+
 
 var modelo = [
     {
@@ -78,7 +78,7 @@ function doShowAll() {
         //You can use jQuery, too.
         document.getElementById('list').innerHTML = list;
         //paypalItems2 = [...paypalItems];
-        return paypalItems;
+        return list;
     } else {
         alert('Cannot save shopping list as your browser does not support HTML 5');
     }
@@ -152,7 +152,7 @@ function setSellImages(coleccion, cloth){
 }
 
 console.log("paypalItems:")
-console.log(paypalItems2);
+//console.log(paypalItems2);
 console.log("modelo");
 console.log(modelo);   
 console.log(localStorage.length)
@@ -176,7 +176,7 @@ paypal.Buttons({
         //alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
         // When ready to go live, remove the alert and show a success message within this page. For example:
         // const element = document.getElementById('paypal-button-container');
-        // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+        element.innerHTML = '<h3>Thank you for your payment!</h3>';
         // Or go to another URL:  actions.redirect('thank_you.html');
         // smtp key C5FEA0A5E534075FF88375640DCC0238D526
         // b192c01d-b0bf-45f8-b7f7-0c1033acb11d
@@ -184,42 +184,65 @@ paypal.Buttons({
         // new pass 0E1DD7A5AB1C3C0F249E7CA6ADCAFEA58367
         // new token 714d85ba-28e2-422f-8ad2-935ec9e77ff4
         // test card 4005519200000004
-        let messageBody = JSON.stringify(paypalItems2)+JSON.stringify(orderData, null, 2);
+        // D9028BBB61233D3A333C040C79E8D3C91DA7
+        // c777db29-0be1-40f7-b6ac-937270378585
+        //)+JSON.stringify(orderData, null, 2);
         console.log(messageBody)
         var nombrepila = orderData.payer.name.given_name;
         var direccionCliente = orderData.payer.email_address;
 
+        console.log("direccion cliente: "+direccionCliente);
         Email.send({
-            SecureToken : "60b0f47a-3c6d-47a3-b2dc-97e48f6481b4",
+            SecureToken : "c777db29-0be1-40f7-b6ac-937270378585",
             To : direccionCliente,
-            From : 'guzmangalofre@gmail.com',
-            Subject : "Confirmación de compra en pistachin",
-            Body : "Hola" + nombrepila + ", tu compra en Pistachin.shop se ha confirmado, enseguida que hayamos procesado el pago te contactaremos con la información de seguimiento del envío"
+            From : 'info@pistachin.shop',
+            Subject : "Confirmación de su compra en Pistachin",
+            Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista
         }).then(
-          message => alert("Gracias "+ nombrepila +" por tu compra. Pronto le llegará la confirmación del pedido a su mail")
+            message => alert("Gracias "+ nombrepila +" por tu compra. Pronto le llegará la confirmación del pedido a su mail")
         );
         Email.send({
-            SecureToken : "60b0f47a-3c6d-47a3-b2dc-97e48f6481b4",
-            To : 'info@psicologiabcn.org',
-            From : 'guzmangalofre@gmail.com',
-            Subject : "Nueva compra de: "+nombrepila,
-            Body : "compra de:" + paypalItems2.filter(name => name[0]!= '$' && name != 'Cloth' || 'Collection' || 'payAmount' || '__paypal_storage__')
+            SecureToken : "c777db29-0be1-40f7-b6ac-937270378585",
+            To : 'info@pistachin.shop',
+            From : 'info@pistachin.shop',
+            Subject : "Nueva compra",
+            Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista+"<br><p>" + JSON.stringify(orderData, null, 2) + "</p>" //"compra de:" + array + " and " +string
         }).then(
-          message => alert("Gracias "+ nombrepila +" por tu compra. Pronto le llegará la confirmación del pedido a su mail")
+          console.log("purchase completed")
         );
     });
     }
 }).render('#paypal-button-container');
 
 function sendMail(){
+    console.log("info envio")
+    //console.log(paypalItems2.forEach(i => ))
+    //var array = [... paypalItems2.filter(name => name[0]!= '$' && name != 'Cloth' || 'Collection' || 'payAmount' || '__paypal_storage__')];
+    //var stringy = [... array.forEach(i => JSON.stringify(i))]
+
+    var array = []
+    var index;
+    for (index = 0; index <= localStorage.length-1; index++) {
+        key = localStorage.key(index);
+        if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){
+            array.push(key+"\tUnits:"+localStorage.getItem(key) + "\n");
+        }
+    }             
+
+    console.log(array)
+    var string = array.toString(array);
+    console.log(string)
+
     Email.send({
-        SecureToken : "714d85ba-28e2-422f-8ad2-935ec9e77ff4",
+        SecureToken : "c777db29-0be1-40f7-b6ac-937270378585",
         To : 'info@pistachin.shop',
         From : 'info@pistachin.shop',
         Subject : "Nueva compra",
-        Body : "compra de:" + paypalItems2.filter(name => name[0]!= '$' && name != 'Cloth' || 'Collection' || 'payAmount' || '__paypal_storage__')
+        Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista//"compra de:" + array + " and " +string
     }).then(
       message => alert("Gracias por tu compra. Pronto le llegará la confirmación del pedido a su mail")
     );
+    
 }
+
     
