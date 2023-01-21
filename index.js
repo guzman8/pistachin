@@ -1,18 +1,4 @@
-// Dynamically populate the table with shopping list items.
-//Step below can be done via PHP and AJAX, too.
-
-
-//paypalItem.name = "hello"
-/*paypalItems.push(paypalItem);
-console.log("name:")
-console.log(paypalItems[0].name);*/
-
-
-const clone = (items) => items.map(item => Array.isArray(item) ? clone(item) : item);
-
-
 var lista =  doShowAll();
-
 
 var modelo = [
     {
@@ -151,11 +137,6 @@ function setSellImages(coleccion, cloth){
     
 }
 
-console.log("paypalItems:")
-//console.log(paypalItems2);
-console.log("modelo");
-console.log(modelo);   
-console.log(localStorage.length)
 paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
     createOrder: (data, actions) => {
@@ -175,19 +156,10 @@ paypal.Buttons({
         const transaction = orderData.purchase_units[0].payments.captures[0];
         //alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
         // When ready to go live, remove the alert and show a success message within this page. For example:
-        // const element = document.getElementById('paypal-button-container');
+        const element = document.getElementById('paypal-button-container');
         element.innerHTML = '<h3>Thank you for your payment!</h3>';
         // Or go to another URL:  actions.redirect('thank_you.html');
-        // smtp key C5FEA0A5E534075FF88375640DCC0238D526
-        // b192c01d-b0bf-45f8-b7f7-0c1033acb11d
-        // ecdfd223-f1c1-43ea-85de-f36c9fcf657e
-        // new pass 0E1DD7A5AB1C3C0F249E7CA6ADCAFEA58367
-        // new token 714d85ba-28e2-422f-8ad2-935ec9e77ff4
-        // test card 4005519200000004
-        // D9028BBB61233D3A333C040C79E8D3C91DA7
-        // c777db29-0be1-40f7-b6ac-937270378585
-        //)+JSON.stringify(orderData, null, 2);
-        console.log(messageBody)
+        
         var nombrepila = orderData.payer.name.given_name;
         var direccionCliente = orderData.payer.email_address;
 
@@ -199,7 +171,7 @@ paypal.Buttons({
             Subject : "Confirmación de su compra en Pistachin",
             Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista
         }).then(
-            message => alert("Gracias "+ nombrepila +" por tu compra. Pronto le llegará la confirmación del pedido a su mail")
+            message => alert("Gracias "+ nombrepila +" por tu compra. Pronto le llegará la confirmación del pedido a su mail, por favor revise tambien su buzon de correo no deseado, si tiene problemas no dude en contactarnos a traves de la pestaña de contacto en esta página web o por nuestro correo info@pistachin.shop")
         );
         Email.send({
             SecureToken : "c777db29-0be1-40f7-b6ac-937270378585",
@@ -210,6 +182,7 @@ paypal.Buttons({
         }).then(
           console.log("purchase completed")
         );
+        ClearAll();
     });
     }
 }).render('#paypal-button-container');
