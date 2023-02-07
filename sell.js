@@ -72,6 +72,7 @@ function doShowAll() {
         var list = "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>";
         var i = 0;
         var currentPaypalItem = 0;
+        var totalItems = 0;
         //paypalItems.splice(0,paypalItems.length);
         //For a more advanced feature, you can set a cap on max items in the cart.
         for (i = 0; i <= localStorage.length-1; i++) {
@@ -92,7 +93,14 @@ function doShowAll() {
                     + localStorage.getItem(key) + "</td><td>" + localStorage.getItem(priceKey) + "€</td><td>" + Math.round(parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key))* 100) / 100 + "€</td></tr>";
                 summ += parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key));
                 currentPaypalItem++;
+                totalItems += parseInt(localStorage.getItem(key));
             }
+        }
+        document.getElementById('lblCartCount').innerHTML = totalItems;
+        if(totalItems==0){
+            document.getElementById('lblCartCount').style.display ="none";
+        }else{
+            document.getElementById('lblCartCount').style.display ="block";
         }
         summ = Math.round(summ * 100) / 100
         localStorage.setItem("payAmount",summ);

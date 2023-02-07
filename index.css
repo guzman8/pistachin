@@ -155,8 +155,18 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Quicksand", "Quicksand";}
   #shoppingCart{
     left: 2rem;
   }
+  .badge{
+    display: block;
+    position: absolute;
+    left: 4rem;
+    width:fit-content
+  }
 
   .dropdown:hover .dropdown-content {display: none;}
+
+  #list{
+    font-size:x-small;
+  }
 }
 
 #shoppingCart{
@@ -167,6 +177,14 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Quicksand", "Quicksand";}
   top: 2rem;
   right: 2rem;
 
+}
+.badge{
+  display: block;
+  position: absolute;
+  /*aspect-ratio: 1;
+  width: 1rem;*/
+  top: 1rem;
+  right: 1rem;
 }
 
 
@@ -230,3 +248,4 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
