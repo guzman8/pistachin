@@ -126,7 +126,7 @@ function SaveItem() {
     
     var itemSizeSelector = document.getElementById("itemSize");
     var itemSize = itemSizeSelector.value;
-    var name = Cloths[parseInt(curentCollection)][parseInt(currentCloth)] + "(coleccion: " + Collections[parseInt(curentCollection)] + ")" + " - " +itemSize;
+    var name = Cloths[parseInt(curentCollection)][parseInt(currentCloth)] + " (coleccion: " + Collections[parseInt(curentCollection)] + ")" + " - " +itemSize;
     console.log(name)
     var itemAmountSelector = document.getElementById("itemAmount")
     var amount = itemAmountSelector.value
