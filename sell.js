@@ -2,7 +2,7 @@ var lista =  doShowAll();
 
 const Collections = ["empty","Nube", "Bosque", "Cerdanya","Pana"];
 const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"]];
-const Prices = [["empty"],["empty","24.9","19.9","29.9","19.9"]];
+const Prices = [["empty"],["empty","17.5","13.9","20.9","13.9"]];
 
 //var storeClo = sessionStorage.cloth;
 var currentPic = 50;
@@ -17,8 +17,8 @@ console.log("collection es:")
 console.log(localStorage.Collection);
 
 
-document.getElementById('item1').style.backgroundImage = "url('"+curentCollection+"/"+currentCloth+"/01.jpeg')";
-document.getElementById('copy1').style.backgroundImage = "url('"+curentCollection+"/"+currentCloth+"/01.jpeg')";
+document.getElementById('item1').style.backgroundImage = "url('"+curentCollection+"/"+currentCloth+"/02.jpeg')";
+//document.getElementById('copy1').style.backgroundImage = "url('"+curentCollection+"/"+currentCloth+"/01.jpeg')";
 document.getElementById('copy2').style.backgroundImage = "url('"+curentCollection+"/"+currentCloth+"/02.jpeg')";
 document.getElementById('copy3').style.backgroundImage = "url('"+curentCollection+"/"+currentCloth+"/03.jpeg')";
 document.getElementById('copy4').style.backgroundImage = "url('"+curentCollection+"/"+currentCloth+"/04.jpeg')";
@@ -186,7 +186,7 @@ function setSellImages(coleccion, cloth){
 
 document.getElementById('htmlConjunto').innerHTML = Cloths[parseInt(curentCollection)][parseInt(currentCloth)];
 document.getElementById('htmlColeccion').innerHTML = "Colección " + Collections[parseInt(curentCollection)]
-
+document.getElementById('htmlPrecio').innerHTML = Prices[parseInt(curentCollection)][parseInt(currentCloth)] + " €";
 
 paypal.Buttons({
     // Sets up the transaction when a payment button is clicked

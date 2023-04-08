@@ -1,6 +1,7 @@
-.grid-container {  
+.grid-container { 
+    margin: auto; 
     display: grid;
-    width: 100%;
+    width: 95%;
     height: auto;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -13,6 +14,7 @@
 
 @media (max-width: 1000px){
     .grid-container{
+        width: 90%;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
             ". ."
