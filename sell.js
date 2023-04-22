@@ -1,8 +1,8 @@
 var lista =  doShowAll();
 
 const Collections = ["empty","Nube", "Pana", "Cerdanya","Bosque"];
-const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"]];
-const Prices = [["empty"],["empty","17.5","13.9","20.9","13.9"],["empty","9.9","14.9","14.9"]];
+const Prices = [["empty"],["empty","17.5","13.9","20.9","13.9"],["empty","9.9","14.9","14.9"],["empty","14.9","9.9"],["empty","23.9"]];
+const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","vestido niña cuadros","ranita niño cuadros"],["empty","jersei unisex animales"]];
 
 //var storeClo = sessionStorage.cloth;
 var currentPic = 50;
@@ -24,6 +24,8 @@ document.getElementById('copy3').style.backgroundImage = "url('"+curentCollectio
 document.getElementById('copy4').style.backgroundImage = "url('"+curentCollection+"/"+currentCloth+"/04.jpeg')";
 document.getElementById('copy5').style.backgroundImage = "url('"+curentCollection+"/"+currentCloth+"/05.jpeg')";
 console.log(curentCollection, currentCloth, document.getElementById('item1').style.backgroundImage);
+
+
 
 function calcNumeroColeccionCloth(tipo){
     var numero =0;
@@ -182,6 +184,11 @@ function setSellImages(coleccion, cloth){
     storeCol = coleccion;
     storeClo = cloth;
     
+}
+
+function setCollection(coleccion){
+    localStorage.setItem("Collection", coleccion);
+    storeCol = coleccion;
 }
 
 document.getElementById('htmlConjunto').innerHTML = Cloths[parseInt(curentCollection)][parseInt(currentCloth)];

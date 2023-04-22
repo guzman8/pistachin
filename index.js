@@ -1,3 +1,27 @@
+const Prices = [["empty"],["empty","17.5","13.9","20.9","13.9"],["empty","9.9","14.9","14.9"],["empty","14.9","9.9"],["empty","23.9"]];
+const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","vestido niña cuadros","ranita niño cuadros"],["empty","jersei unisex animales"]];
+
+var lista =  doShowAll();
+
+try {
+    var fotos_Coleccion = fotosColeccion();
+    document.getElementById('HTMLproductos').innerHTML = fotos_Coleccion;
+    localStorage.Cloth = "01";
+  } catch (error) {
+    console.log("error aqui no puedo montar la colección");
+    // Expected output: ReferenceError: nonExistentFunction is not defined
+    // (Note: the exact output may be browser-dependent)
+}
+
+function fotosColeccion() {
+    var html = " "
+    for (let indx = 1; indx < Cloths[parseInt(localStorage.Collection)].length; indx++) {
+        html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br><p id="p_old_price"><s>'+ Prices[parseInt(localStorage.Collection)][indx] +' €</s></p><p id="p_new_price">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p></div>';
+    }
+    console.log(html);
+    return html;
+}
+
 
 
 var lista =  doShowAll();
@@ -145,6 +169,11 @@ function setSellImages(coleccion, cloth){
     storeCol = coleccion;
     storeClo = cloth;
     
+}
+
+function setCollection(coleccion){
+    localStorage.setItem("Collection", coleccion);
+    storeCol = coleccion;
 }
 
 paypal.Buttons({

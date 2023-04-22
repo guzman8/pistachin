@@ -4,13 +4,13 @@
   <title>Pistachin kids</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords" content="Pana, ropa, niños, conjunto, niño y niña, bebe, kids, pistachin, Tienda">
-  <meta name="description" content="conjunto ropa de pana para bebe niños">
+  <meta name="keywords" content="ropa, niños, conjunto, nube, niño y niña, bebe, kids, pistachin, Tienda">
+  <meta name="description" content="conjunto ropa nube para bebe niños">
   <meta name="author" content="Guzmán Mestre Galofré">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="index.css" rel="stylesheet">
-  <link href="ColeccionPana.css" rel="stylesheet">
+  <link href="Coleccion.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
   <script src="index.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -56,36 +56,22 @@
     <span class='badge badge-warning' id='lblCartCount'> x </span>
     <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="index.html">00 Home</a></button>
-    </li>
-      <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="ColeccionNube.html">01 Colección Nube</a></button>
+        <button class="dropbtn hover-underline-animation"><a>00 Colecciones invierno</a></button>
         <div class="dropdown-content">
-          <a href="sell.html" onclick="setSellImages('01','01')">Ranita bebe niña</a>
-          <a href="sell.html" onclick="setSellImages('01','02')">peto bebe niño</a>
-          <a href="sell.html" onclick="setSellImages('01','03')">vestido niña</a>
-          <a href="sell.html" onclick="setSellImages('01','04')">camisa polera niño</a>
+          <a href="Coleccion.html" onclick="setCollection('01')">Colección Nube</a>
+          <a href="Coleccion.html" onclick="setCollection('02')">Colección pana</a>
+          <a href="Coleccion.html" onclick="setCollection('03')">Colección cerdanya</a>
+          <a href="Coleccion.html" onclick="setCollection('04')">Colección bosque</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="ColeccionCerdanya.html">02 Colección Cerdaña</a></button>
+        <button class="dropbtn hover-underline-animation"><a>01 Colecciones verano</a></button>
         <div class="dropdown-content">
-          <a href="#">Ranita bebe niña</a>
-          <a href="#">Vestido niña</a>
-          <a href="#">Camisa polera body</a>
-          <a href="#">Camisa niño</a>
+          <a href="Coleccion.html" onclick="setCollection('01')">Colección 01</a>
+          <a href="Coleccion.html" onclick="setCollection('02')">Colección 02</a>
+          <a href="Coleccion.html" onclick="setCollection('03')">Colección 03</a>
+          <a href="Coleccion.html" onclick="setCollection('04')">Colección 04</a>
         </div>
-      </li>
-      <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="ColeccionPana.html">03 Colección Pana</a></button>
-        <div class="dropdown-content">
-            <a href="#">Pichi niña</a>
-            <a href="#">Peto</a>
-            <a href="#">Short</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="ColeccionBosque.html">03 Colección Bosque</a></button>
       </li>
       <li class="nav-item dropdown">
           <button class="dropbtn hover-underline-animation"><a href="Contact.html">04 Contacto</a></button>
@@ -124,46 +110,14 @@
   }
 </script>
 
-<div class="grid-container">
-  <div>
-    <div style="margin-top: 10px;margin-left: 10px;margin-right: 10px; margin-bottom: auto;">
-      <a href="sell.html" onclick="setSellImages('02','01')">
-        <img style="border-radius: 25px;" src="02/01/02.jpeg" alt="">
-      </a>
-      <br>
-      <p style="margin-top: 10px;margin-bottom: 0px;font-size: 20px;"><s>20 €</s></p>
-      <p style="margin: auto;color: #c70d0d; font-size: 30px;">9,9 €</p> 
-    </div>
-  </div>
-
-  <div>
-    <div style="margin-top: 10px;margin-left: 10px;margin-right: 10px; margin-bottom: auto;">
-      <a href="sell.html" onclick="setSellImages('02','02')">
-        <img style="border-radius: 25px; aspect-ratio: 1; ;object-fit: cover;" src="02/02/02.jpeg" alt="">
-      </a>
-      <br>
-      <p style="margin-top: 10px;margin-bottom: 0px;font-size: 20px;"><s>25 €</s></p>
-      <p style="margin: auto;color: #c70d0d; font-size: 30px;">14,9 €</p> 
-    </div>  
-  </div>
-
-  <div>
-    <div style="margin-top: 10px;margin-left: 10px;margin-right: 10px; margin-bottom: auto;">
-      <a href="sell.html" onclick="setSellImages('02','03')">
-        <img style="border-radius: 25px; aspect-ratio: 1; ;object-fit: cover;" src="02/03/02.jpeg" alt="">
-      </a>
-      <br>
-      <p style="margin-top: 10px;margin-bottom: 0px;font-size: 20px;"><s>25 €</s></p>
-      <p style="margin: auto;color: #c70d0d; font-size: 30px;">14,9 €</p> 
-    </div>  
-  </div>
-
+<div class="grid-container" id="HTMLproductos">
+  
 </div>
   
 <br>
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>Pistachin kids limited</p>
 </footer>
 
 </body>
