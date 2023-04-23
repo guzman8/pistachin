@@ -1,8 +1,9 @@
 var lista =  doShowAll();
 
 const Collections = ["empty","Nube", "Pana", "Cerdanya","Bosque"];
-const Prices = [["empty"],["empty","17.5","13.9","20.9","13.9"],["empty","9.9","14.9","14.9"],["empty","14.9","9.9"],["empty","23.9"]];
-const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","vestido niña cuadros","ranita niño cuadros"],["empty","jersei unisex animales"]];
+const Prices = [["empty"],["empty","17.5","13.9","20.9","13.9"],["empty","9.9","14.9","14.9"],["empty","14.9","9.9"],["empty","23.9"],["empty","15","18"],["empty","20"]];
+const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","vestido niña cuadros","ranita niño cuadros"],["empty","jersei unisex animales"],["empty","vestido niña","ranita bebe niño"],["empty","Vestido niña"]];
+
 
 //var storeClo = sessionStorage.cloth;
 var currentPic = 50;
