@@ -16,7 +16,7 @@ try {
 function fotosColeccion() {
     var html = " "
     for (let indx = 1; indx < Cloths[parseInt(localStorage.Collection)].length; indx++) {
-        html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br><p id="p_old_price"><s>'+ Prices[parseInt(localStorage.Collection)][indx] +' €</s></p><p id="p_new_price">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p></div>';
+        html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br><p id="p_old_price"><s>'+ Prices[parseInt(localStorage.Collection)][indx] +' €</s></p><p id="p_new_price">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
     }
     console.log(html);
     return html;

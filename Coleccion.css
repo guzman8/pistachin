@@ -33,6 +33,10 @@
     margin-top: 10px;margin-bottom: 0px;font-size: 20px;
 }
 
+#nombre_prenda {
+    font-size: large;
+}
+
 @media (max-width: 1000px){
     .grid-container{
         width: 90%;
