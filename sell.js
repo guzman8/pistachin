@@ -1,9 +1,26 @@
 var lista =  doShowAll();
 
 const Collections = ["empty","Nube", "Pana", "Cerdanya","Bosque","Menorca","Wild","Sunny","Sailor"];
-const Prices = [["empty"],["empty","17.5","13.9","20.9","13.9"],["empty","9.9","14.9","14.9"],["empty","14.9","9.9"],["empty","23.9"],["empty","27.9","23.9","27.9","19.9","19.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
-const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","vestido niña cuadros","ranita niño cuadros"],["empty","jersei unisex animales"],["empty","vestido bebe niña","ranita bebe niña","vestido niña","pantalon niño","ranita bebe"],["empty","Vestido niña","peto niño","ranita bebe niño","vestido bebe niña"],["empty","peto niño","vestido niña","pelele bebe niño","ranita bebe niña"],["empty","vestido niña","peto niño","pelele bebe"]];
+const Prices = [["empty"],["empty","17.5","13.9","20.9","13.9"],["empty","9.9","14.9","14.9"],["empty","14.9","9.9"],["empty","23.9"],["empty","27.9","23.9","17.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
+const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","ranita niño cuadros","vestido niña cuadros"],["empty","jersei unisex animales"],["empty","vestido niña","ranita bebe niña","pantalon niño","pelele bebe niño"],["empty","Vestido niña","peto niño","ranita bebe niño","ranita bebe niña"],["empty","peto niño","vestido niña","pelele bebe niño","ranita bebe niña"],["empty","vestido niña","peto niño","pelele bebe"]];
+const Sizes = [["empty"],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"],["2-3 años","3-4 años","4-5 años"]],["empty",["2-3 años","3-4 años","4-5 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"]],["empty",["6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],["empty",["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses"]],["empty",["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses"]],["empty",["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años","6-7 años"],["3-6 meses","6-9 meses","9-12 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses"]],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses"]]];
 
+try {
+    var tallas = tallaPrenda();
+    document.getElementById('itemSize').innerHTML = tallas;
+  } catch (error) {
+    console.log("error aqui no puedo montar la colección");
+    // Expected output: ReferenceError: nonExistentFunction is not defined
+    // (Note: the exact output may be browser-dependent)
+}
+
+function tallaPrenda() {
+    var html = " "
+    for (let indx = 0; indx < Sizes[parseInt(localStorage.Collection)][parseInt(localStorage.Cloth)].length; indx++) {
+        html += '<option value="'+Sizes[parseInt(localStorage.Collection)][parseInt(localStorage.Cloth)][indx]+'">'+Sizes[parseInt(localStorage.Collection)][parseInt(localStorage.Cloth)][indx]+'</option>'
+    }
+    return html;
+}
 
 //var storeClo = sessionStorage.cloth;
 var currentPic = 50;
