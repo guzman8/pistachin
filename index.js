@@ -1,6 +1,5 @@
-const Prices = [["empty"],["empty","17.5","13.9","20.9","13.9"],["empty","9.9","14.9","14.9"],["empty","14.9","9.9"],["empty","23.9"],["empty","27.9","23.9","17.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
+const Prices = [["empty"],["empty","17,5","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","14.9","9.9"],["empty","23.9"],["empty","27.9","23.9","17.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
 const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","ranita niño cuadros","vestido niña cuadros"],["empty","jersei unisex animales"],["empty","vestido niña","ranita bebe niña","pantalon niño","pelele bebe niño"],["empty","Vestido niña","peto niño","ranita bebe niño","ranita bebe niña"],["empty","peto niño","vestido niña","pelele bebe niño","ranita bebe niña"],["empty","vestido niña","peto niño","pelele bebe"]];
-
 
 var lista =  doShowAll();
 
@@ -17,7 +16,12 @@ try {
 function fotosColeccion() {
     var html = " "
     for (let indx = 1; indx < Cloths[parseInt(localStorage.Collection)].length; indx++) {
-        html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br><p id="p_old_price"><s>'+ Prices[parseInt(localStorage.Collection)][indx] +' €</s></p><p id="p_new_price">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
+        html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br>';
+        if (parseInt(localStorage.Collection) < 5){
+            let old_price = parseInt(Prices[parseInt(localStorage.Collection)][indx])/(0.7);
+            html += '<p id="p_old_price"><s>'+ old_price +' €</s></p>';
+        }
+        html += '<p id="p_new_price">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
     }
     console.log(html);
     return html;
