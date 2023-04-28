@@ -7,15 +7,27 @@ try {
     var fotos_Coleccion = fotosColeccion();
     document.getElementById('HTMLproductos').innerHTML = fotos_Coleccion;
     localStorage.Cloth = "01";
+    document.getElementById('menorca').style.fontWeight ="500";
+    document.getElementById('wild').style.fontWeight ="500";
+    document.getElementById('sailor').style.fontWeight ="500";
+    document.getElementById('sunny').style.fontWeight ="500";
     switch (localStorage.Collection) {
-        case "05":
-            document.getElementById('menorca').style.color ="black";
+        case "06":
+            document.getElementById('wild').style.fontWeight ="900";
             break;
-    
+        case "07":
+            document.getElementById('sunny').style.fontWeight ="900";
+            break;
+        case "08":
+            document.getElementById('sailor').style.fontWeight ="900";
+            break;
+        case "05":
+            document.getElementById('menorca').style.fontWeight ="900";
+            break;
         default:
             break;
     }
-    document.getElementById('menorca').style.fontWeight ="900";
+    
   } catch (error) {
     console.log("error aqui no puedo montar la colección");
     // Expected output: ReferenceError: nonExistentFunction is not defined

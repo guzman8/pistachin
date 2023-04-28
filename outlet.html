@@ -4,13 +4,13 @@
   <title>Pistachin kids</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords" content="Gonzaga, Leticia, Mestre, Galofré">
-  <meta name="description" content="fundador pistachin kids">
+  <meta name="keywords" content="ropa, niños, conjunto, nube, niño y niña, bebe, kids, pistachin, Tienda">
+  <meta name="description" content="conjunto ropa nube para bebe niños">
   <meta name="author" content="Guzmán Mestre Galofré">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="index.css" rel="stylesheet">
-  <link href="ColeccionPana.css" rel="stylesheet">
+  <link href="Coleccion.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
   <script src="index.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -56,7 +56,7 @@
     <span class='badge badge-warning' id='lblCartCount'> x </span>
     <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="Coleccion.html" onclick="setCollection('05')">Colección menorca</a></button>
+        <button id="menorca" class="dropbtn hover-underline-animation"><a href="Coleccion.html" onclick="setCollection('05')">00 Colección menorca</a></button>
         <div class="dropdown-content">
           <a href="sell.html" onclick="setSellImages('05','01')">Vestido bebe niña</a>
           <a href="sell.html" onclick="setSellImages('05','02')">Ranita bebe niño</a>
@@ -66,7 +66,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="Coleccion.html" onclick="setCollection('06')">Colección Wild</a></button>
+        <button class="dropbtn hover-underline-animation"><a href="Coleccion.html" onclick="setCollection('06')">01 Colección Wild</a></button>
         <div class="dropdown-content">
           <a href="sell.html" onclick="setSellImages('06','01')">vestido niña</a>
           <a href="sell.html" onclick="setSellImages('06','02')">peto niño</a>
@@ -75,7 +75,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="Coleccion.html" onclick="setCollection('07')">Colección sunny</a></button>
+        <button class="dropbtn hover-underline-animation"><a href="Coleccion.html" onclick="setCollection('07')">01 Colección sunny</a></button>
         <div class="dropdown-content">
           <a href="sell.html" onclick="setSellImages('07','01')">peto niño</a>
           <a href="sell.html" onclick="setSellImages('07','02')">vestido niña</a>
@@ -84,7 +84,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a href="Coleccion.html" onclick="setCollection('08')">Colección sailor</a></button>
+        <button class="dropbtn hover-underline-animation"><a href="Coleccion.html" onclick="setCollection('08')">01 Colección sailor</a></button>
         <div class="dropdown-content">
           <a href="sell.html" onclick="setSellImages('08','01')">vestido niña</a>
           <a href="sell.html" onclick="setSellImages('08','02')">peto niño</a>
@@ -92,7 +92,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <button class="dropbtn hover-underline-animation"><a>Outlet invierno</a></button>
+        <button class="dropbtn hover-underline-animation"><a>02 Outlet invierno</a></button>
         <div class="dropdown-content">
           <a href="Coleccion.html" onclick="setCollection('01')">Colección Nube</a>
           <a href="Coleccion.html" onclick="setCollection('02')">Colección pana</a>
@@ -101,10 +101,10 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-          <button class="dropbtn hover-underline-animation"><a href="Contact.html">Contacto</a></button>
+          <button class="dropbtn hover-underline-animation"><a href="Contact.html">03 Contacto</a></button>
       </li>
       <li class="nav-item dropdown">
-          <button class="dropbtn hover-underline-animation"><a href="About.html">About us</a></button>
+          <button class="dropbtn hover-underline-animation"><a href="About.html">04 About us</a></button>
       </li>
     </ul>
   </nav>
@@ -137,27 +137,10 @@
   }
 </script>
 
-<div class="container">
-  <h1>Formulario de contacto</h1>
-  <form target="_blank" action="https://formsubmit.co/d2894ee02305119387ccd4546ba8ae82" method="POST">
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col">
-          <input type="text" name="name" class="form-control" placeholder="Nombre completo" required>
-        </div>
-        <div class="col">
-          <input type="email" name="email" class="form-control" placeholder="direccion de correo" required>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <textarea placeholder="Tu mensaje" class="form-control" name="message" rows="10" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
-  </form>
+<div class="grid-container" id="HTMLproductos">
+  
 </div>
-
-
+  
 <br>
 
 <footer class="container-fluid text-center">
