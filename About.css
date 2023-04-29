@@ -1,26 +1,37 @@
-.grid-container div img{
 
+
+.grid-container div img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: auto;
     width: 100%;
     /*object-fit:fill;*/
     border-radius: 10%;
 }
 
-.image{
-
+h1{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+p{
+    text-align: justify;
+}
+
 
 #fund1{
     grid-area: imgfund1;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 
 #div1{
     grid-area: desc1;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 
