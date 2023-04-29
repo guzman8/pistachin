@@ -1,5 +1,5 @@
 const Prices = [["empty"],["empty","1","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","17.5","21"],["empty","23.9"],["empty","27.9","23.9","17.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
-const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","ranita niño cuadros","vestido niña cuadros"],["empty","jersei unisex animales"],["empty","vestido niña","ranita bebe niña","pantalon niño","pelele bebe niño"],["empty","Vestido niña","peto niño","ranita bebe niño","ranita bebe niña"],["empty","peto niño","vestido niña","pelele bebe niño","ranita bebe niña"],["empty","vestido niña","peto niño","pelele bebe"]];
+const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","ranita niño cuadros","vestido niña cuadros"],["empty","jersei unisex animales"],["empty","vestido bebe niña","ranita bebe niña","pantalon niño","pelele bebe niño"],["empty","Vestido niña","Peto niño","Pelele bebe niño","Ranita bebe niña"],["empty","peto niño","vestido niña","pelele bebe niño","ranita bebe niña"],["empty","vestido bebe niña","peto niño","pelele bebe niño"]];
 
 var lista =  doShowAll();
 
