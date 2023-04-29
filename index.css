@@ -32,7 +32,7 @@
   
   .close:hover,
   .close:focus {
-    color: #000;
+    color: #de1515;
     text-decoration: none;
     cursor: pointer;
   }
@@ -71,7 +71,7 @@
   /*hover dentro del dropdown*/
   .dropdown-content a:hover {background-color: #ddd;}
   /*hover dropbtn*/
-  .dropdown:hover .dropbtn {color: rgb(0, 0, 0);}
+  /*.dropdown:hover .dropbtn {color: rgb(233, 13, 13);}*/
   .dropdown:hover .dropbtn a {color: rgb(0, 0, 0);text-decoration: none;}
 
 

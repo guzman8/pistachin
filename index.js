@@ -2,36 +2,30 @@ const Prices = [["empty"],["empty","1","13,9","20,9","13,9"],["empty","9.9","14.
 const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","ranita niño cuadros","vestido niña cuadros"],["empty","jersei unisex animales"],["empty","vestido niña","ranita bebe niña","pantalon niño","pelele bebe niño"],["empty","Vestido niña","peto niño","ranita bebe niño","ranita bebe niña"],["empty","peto niño","vestido niña","pelele bebe niño","ranita bebe niña"],["empty","vestido niña","peto niño","pelele bebe"]];
 
 var lista =  doShowAll();
+current_tab();
 
 try {
     var fotos_Coleccion = fotosColeccion();
     document.getElementById('HTMLproductos').innerHTML = fotos_Coleccion;
     localStorage.Cloth = "01";
-    document.getElementById('menorca').style.fontWeight ="500";
-    document.getElementById('wild').style.fontWeight ="500";
-    document.getElementById('sailor').style.fontWeight ="500";
-    document.getElementById('sunny').style.fontWeight ="500";
-    switch (localStorage.Collection) {
-        case "06":
-            document.getElementById('wild').style.fontWeight ="900";
-            break;
-        case "07":
-            document.getElementById('sunny').style.fontWeight ="900";
-            break;
-        case "08":
-            document.getElementById('sailor').style.fontWeight ="900";
-            break;
-        case "05":
-            document.getElementById('menorca').style.fontWeight ="900";
-            break;
-        default:
-            break;
-    }
     
   } catch (error) {
-    console.log("error aqui no puedo montar la colección");
+    console.log("error aqui no puedo montar la colección",error);
     // Expected output: ReferenceError: nonExistentFunction is not defined
     // (Note: the exact output may be browser-dependent)
+}
+
+function current_tab(){
+    const nombres_coleccion = document.getElementsByClassName('col_name')
+    for (let index = 0; index < nombres_coleccion.length; index++) {
+        nombres_coleccion[index].style.color = "rgb(164, 164, 164)"
+    }
+    if (parseInt(localStorage.Collection)<5 && parseInt(localStorage.Collection)>0) {
+        nombres_coleccion[nombres_coleccion.length-1].style.color = "rgb(0, 0, 0)";
+    }else{
+        nombres_coleccion[parseInt(localStorage.Collection)-5].style.color = "rgb(0, 0, 0)";
+    }
+    
 }
 
 function fotosColeccion() {

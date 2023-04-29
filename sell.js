@@ -8,6 +8,7 @@ const Sizes = [["empty"],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 m
 try {
     var tallas = tallaPrenda();
     document.getElementById('itemSize').innerHTML = tallas;
+    
   } catch (error) {
     console.log("error aqui no puedo montar la colección");
     // Expected output: ReferenceError: nonExistentFunction is not defined
