@@ -1,4 +1,14 @@
-const Prices = [["empty"],["empty","1","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","17.5","21"],["empty","23.9"],["empty","27.9","23.9","17.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
+/*import  loadScript  from "@paypal/paypal-js";
+loadScript({ "client-id": "Ae6_RtNj5FP408yPLC_rU5oS7GDUhDEVeP28akNpOCC_IKhYvtAN4ompZdK-UUx753TGuxyJpXyw9nxs" })
+.then((paypal) => {
+    // start to use the PayPal JS SDK script
+    
+})
+.catch((err) => {
+    console.error("failed to load the PayPal JS SDK script", err);
+});*/
+
+const Prices = [["empty"],["empty","17.5","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","17.5","21"],["empty","23.9"],["empty","27.9","23.9","17.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
 const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","ranita niño cuadros","vestido niña cuadros"],["empty","jersei unisex animales"],["empty","vestido bebe niña","ranita bebe niña","pantalon niño","pelele bebe niño"],["empty","Vestido niña","Peto niño","Pelele bebe niño","Ranita bebe niña"],["empty","peto niño","vestido niña","pelele bebe niño","ranita bebe niña"],["empty","vestido bebe niña","peto niño","pelele bebe niño"]];
 
 var lista =  doShowAll();
@@ -58,7 +68,7 @@ var modelo = [
       "description": "a granel", 
       "unit_amount": {
         "currency_code": "EUR",
-        "value": "22.4"
+        "value": "1.0"
       },
       "quantity": "1"
     },{
@@ -66,7 +76,7 @@ var modelo = [
       "description": "de color naranja", /* Item details will also be in the completed paypal.com transaction view */
       "unit_amount": {
         "currency_code": "EUR",
-        "value": "22.4"
+        "value": "1.0"
       },
       "quantity": "1"
     },
@@ -86,18 +96,8 @@ function doShowAll() {
         //For a more advanced feature, you can set a cap on max items in the cart.
         for (i = 0; i <= localStorage.length-1; i++) {
             key = localStorage.key(i);
-            if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){
-                          
+            if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){              
                 priceKey = "$" + key;
-                paypalItems.push(Object.create({
-                    "name": key, 
-                    "description": "ropa de bebes",
-                    "unit_amount": {
-                      "currency_code": "EUR",
-                      "value": localStorage.getItem(priceKey)
-                    },
-                    "quantity": localStorage.getItem(key)
-                }));
                 list += "<tr><td>" + key + "</td><td>"
                     + localStorage.getItem(key) + "</td><td>" + localStorage.getItem(priceKey) + "€</td><td>" + Math.round(parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key))* 100) / 100 + "€</td></tr>";
                 summ += parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key));
@@ -182,11 +182,6 @@ navToggle.addEventListener('click', () => {
     console.log(visibility2)
 });
 
-var curentCollection = '01';
-var currentCloth = '01';
-//var storeCol = sessionStorage.coleccion;
-//var storeClo = sessionStorage.cloth;
-
 function setSellImages(coleccion, cloth){
     console.log("vamos a poner las imagenes a punto");
     localStorage.setItem("Collection", coleccion);   
@@ -201,6 +196,10 @@ function setCollection(coleccion){
     localStorage.setItem("Collection", coleccion);
     storeCol = coleccion;
 }
+
+
+
+
 
 paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
@@ -250,37 +249,4 @@ paypal.Buttons({
         ClearAll();
     });
     }
-}).render('#paypal-button-container');
-
-function sendMail(){
-    console.log("info envio")
-    //console.log(paypalItems2.forEach(i => ))
-    //var array = [... paypalItems2.filter(name => name[0]!= '$' && name != 'Cloth' || 'Collection' || 'payAmount' || '__paypal_storage__')];
-    //var stringy = [... array.forEach(i => JSON.stringify(i))]
-
-    var array = []
-    var index;
-    for (index = 0; index <= localStorage.length-1; index++) {
-        key = localStorage.key(index);
-        if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){
-            array.push(key+"\tUnits:"+localStorage.getItem(key) + "\n");
-        }
-    }             
-
-    console.log(array)
-    var string = array.toString(array);
-    console.log(string)
-
-    Email.send({
-        SecureToken : "c777db29-0be1-40f7-b6ac-937270378585",
-        To : 'info@pistachin.shop',
-        From : 'info@pistachin.shop',
-        Subject : "Nueva compra",
-        Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista//"compra de:" + array + " and " +string
-    }).then(
-      message => alert("Gracias por tu compra. Pronto le llegará la confirmación del pedido a su mail")
-    );
-    
-}
-
-    
+}).render('#paypal-button-container');    

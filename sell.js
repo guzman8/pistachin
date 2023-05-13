@@ -1,5 +1,25 @@
 var lista =  doShowAll();
 
+var modelo = [
+    {
+      "name": "patatas", 
+      "description": "a granel", 
+      "unit_amount": {
+        "currency_code": "EUR",
+        "value": "1"
+      },
+      "quantity": "1"
+    },{
+      "name": "zanahorias", /* Shows within upper-right dropdown during payment approval */
+      "description": "de color naranja", /* Item details will also be in the completed paypal.com transaction view */
+      "unit_amount": {
+        "currency_code": "EUR",
+        "value": "1"
+      },
+      "quantity": "1"
+    },
+  ];
+
 current_tab();
 
 function current_tab(){
@@ -17,7 +37,7 @@ function current_tab(){
 
 const Collections = ["empty","Nube", "Pana", "Cerdanya","Bosque","Menorca","Wild","Sunny","Sailor"];
 const Sizes = [["empty"],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"],["2-3 años","3-4 años","4-5 años"]],["empty",["2-3 años","3-4 años","4-5 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"]],["empty",["6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],["empty",["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses"]],["empty",["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses"]],["empty",["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años","6-7 años"],["3-6 meses","6-9 meses","9-12 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses"]],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses"]]];
-const Prices = [["empty"],["empty","1","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","17.5","21"],["empty","23.9"],["empty","27.9","23.9","17.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
+const Prices = [["empty"],["empty","17.5","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","17.5","21"],["empty","23.9"],["empty","27.9","23.9","17.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
 const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","ranita niño cuadros","vestido niña cuadros"],["empty","jersei unisex animales"],["empty","vestido bebe niña","ranita bebe niña","pantalon niño","pelele bebe niño"],["empty","Vestido niña","Peto niño","Pelele bebe niño","Ranita bebe niña"],["empty","peto niño","vestido niña","pelele bebe niño","ranita bebe niña"],["empty","vestido bebe niña","peto niño","pelele bebe niño"]];
 
 //17,5
@@ -43,7 +63,7 @@ function tallaPrenda() {
 var currentPic = 50;
 var currentCloth = localStorage.Cloth;
 var curentCollection = localStorage.Collection;
-localStorage.setItem("payAmount", "27");
+//localStorage.setItem("payAmount", "27");
 //console.log("storeCloth is:")
 //console.log(storeClo);
 console.log("storeCollection is:")
@@ -99,7 +119,6 @@ navToggle.addEventListener('click', () => {
 });
 
 
-
 function doShowAll() {
     if (true) {
         var key = "";
@@ -119,13 +138,15 @@ function doShowAll() {
                 priceKey = "$" + key;
                 paypalItems.push(Object.create({
                     "name": key, 
-                    "description": "ropa de bebes",
+                    "description": priceKey,
                     "unit_amount": {
                       "currency_code": "EUR",
                       "value": localStorage.getItem(priceKey)
                     },
                     "quantity": localStorage.getItem(key)
                 }));
+                console.log("esto es el value")
+                console.log(paypalItems[paypalItems.length-1].unit_amount.value);
                 list += "<tr><td>" + key + "</td><td>"
                     + localStorage.getItem(key) + "</td><td>" + localStorage.getItem(priceKey) + "€</td><td>" + Math.round(parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key))* 100) / 100 + "€</td></tr>";
                 summ += parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key));
@@ -152,7 +173,7 @@ function doShowAll() {
         //You can use jQuery, too.
         document.getElementById('list').innerHTML = list;
         //paypalItems2 = [...paypalItems];
-        return list;
+        return paypalItems;
     } else {
         alert('Cannot save shopping list as your browser does not support HTML 5');
     }
@@ -233,14 +254,32 @@ document.getElementById('htmlPrecio').innerHTML = Prices[parseInt(curentCollecti
 paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
     createOrder: (data, actions) => {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                   value: localStorage.payAmount
+                 }
+            }]
+        });
+        },
+    /*createOrder: (data, actions) => {
+        console.log(JSON.stringify(modelo),sendNetEntities(lista))
     return actions.order.create({
         purchase_units: [{
-            amount: {
-               value: localStorage.payAmount
-             }
+            "amount": {
+                "currency_code": "EUR",
+                "value": localStorage.payAmount,
+                "breakdown": {
+                    "item_total": {  
+                        "currency_code": "EUR",
+                        "value": localStorage.payAmount
+                    }
+                }
+            },
+            "items":  lista
         }]
     });
-    },
+    }*/
     // Finalize the transaction after payer approval
     onApprove: (data, actions) => {
     return actions.order.capture().then(function(orderData) {
@@ -264,7 +303,7 @@ paypal.Buttons({
             Subject : "Confirmación de su compra en Pistachin",
             Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista
         }).then(
-            message => alert("Gracias "+ nombrepila +" por tu compra. Pronto le llegará la confirmación del pedido a su mail, por favor revise tambien su buzon de correo no deseado, si tiene problemas no dude en contactarnos a traves de la pestaña de contacto en esta página web o por nuestro correo info@pistachin.shop")
+            message => alert("Gracias "+ nombrepila +" por tu compra. Pronto le llegará la confirmación del pedido a su mail, por favor revise tambien su buzón de correo no deseado, si tiene problemas no dude en contactarnos a traves de la pestaña de contacto en esta página web o por nuestro correo info@pistachin.shop")
         );
         Email.send({
             SecureToken : "c777db29-0be1-40f7-b6ac-937270378585",
