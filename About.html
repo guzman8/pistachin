@@ -37,7 +37,7 @@
   </div>
 </div>
 
-<div><a href="index.html"><img id="top_logo" src="Logos/Logo.png" alt="Pistachin"></a></div>
+<div><a href="index.html" onclick="setCollection('-2')"><img id="top_logo" src="Logos/Logo.png" alt="Pistachin"></a></div>
 <header class="primary-header">
   <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
     <span class="sr-only">Menu</span>                 
@@ -47,38 +47,44 @@
     <span class='badge badge-warning' id='lblCartCount'> x </span>
     <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
       <li class="nav-item dropdown">
+        <button class="dropbtn hover-underline-animation"><a class="col_name" href="Coleccion.html" onclick="setCollection('04')">Colección Bosque</a></button>
+        <div class="dropdown-content">
+          <a href="sell.html" onclick="setSellImages('04','01')">Jersei animales</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
         <button class="dropbtn hover-underline-animation"><a class="col_name" href="Coleccion.html" onclick="setCollection('05')">Colección Menorca</a></button>
         <div class="dropdown-content">
-          <a href="sell.html" onclick="setSellImages('05','01')">Vestido niña</a>
-          <a href="sell.html" onclick="setSellImages('05','02')">Ranita bebe niña</a>
-          <a href="sell.html" onclick="setSellImages('05','03')">Pantalon niño</a>
-          <a href="sell.html" onclick="setSellImages('05','04')">Pelele bebe niño</a>
+          <a href="sell.html" onclick="setSellImages('05','01')">Ranita bebe</a>
+          <a href="sell.html" onclick="setSellImages('05','02')">Pelele bebe</a>
+          <a href="sell.html" onclick="setSellImages('05','03')">Vestido</a>
+          <a href="sell.html" onclick="setSellImages('05','04')">Pantalón</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <button class="dropbtn hover-underline-animation"><a class="col_name" href="Coleccion.html" onclick="setCollection('06')">Colección Wild</a></button>
         <div class="dropdown-content">
-          <a href="sell.html" onclick="setSellImages('06','01')">Vestido niña</a>
-          <a href="sell.html" onclick="setSellImages('06','02')">Peto niño</a>
-          <a href="sell.html" onclick="setSellImages('06','03')">Pelele bebe niño</a>
-          <a href="sell.html" onclick="setSellImages('06','04')">Ranita bebe niña</a>
+          <a href="sell.html" onclick="setSellImages('06','01')">Ranita bebe</a>
+          <a href="sell.html" onclick="setSellImages('06','02')">Pelele bebe</a>
+          <a href="sell.html" onclick="setSellImages('06','03')">Vestido</a>
+          <a href="sell.html" onclick="setSellImages('06','04')">Peto</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <button class="dropbtn hover-underline-animation"><a class="col_name" href="Coleccion.html" onclick="setCollection('07')">Colección Sunny</a></button>
         <div class="dropdown-content">
-          <a href="sell.html" onclick="setSellImages('07','01')">Peto niño</a>
-          <a href="sell.html" onclick="setSellImages('07','02')">Vestido niña</a>
-          <a href="sell.html" onclick="setSellImages('07','03')">Pelele bebe niño</a>
-          <a href="sell.html" onclick="setSellImages('07','04')">Ranita bebe niña</a>
+          <a href="sell.html" onclick="setSellImages('07','01')">Ranita bebe</a>
+          <a href="sell.html" onclick="setSellImages('07','02')">Pelele bebe</a>
+          <a href="sell.html" onclick="setSellImages('07','03')">Vestido</a>
+          <a href="sell.html" onclick="setSellImages('07','04')">Peto</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <button class="dropbtn hover-underline-animation"><a class="col_name" href="Coleccion.html" onclick="setCollection('08')">Colección Sailor</a></button>
         <div class="dropdown-content">
-          <a href="sell.html" onclick="setSellImages('08','01')">Vestido niña</a>
-          <a href="sell.html" onclick="setSellImages('08','02')">Peto niño</a>
-          <a href="sell.html" onclick="setSellImages('08','03')">Pelele bebe niño</a>
+          <a href="sell.html" onclick="setSellImages('08','01')">Pelele bebe</a>
+          <a href="sell.html" onclick="setSellImages('08','02')">Vestido</a>
+          <a href="sell.html" onclick="setSellImages('08','03')">Peto</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -87,7 +93,6 @@
           <a href="Coleccion.html" onclick="setCollection('01')">Colección Nube</a>
           <a href="Coleccion.html" onclick="setCollection('02')">Colección pana</a>
           <a href="Coleccion.html" onclick="setCollection('03')">Colección cerdanya</a>
-          <a href="Coleccion.html" onclick="setCollection('04')">Colección bosque</a>
         </div>
       </li>
       <li class="nav-item dropdown">

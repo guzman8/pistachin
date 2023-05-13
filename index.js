@@ -8,8 +8,10 @@ loadScript({ "client-id": "Ae6_RtNj5FP408yPLC_rU5oS7GDUhDEVeP28akNpOCC_IKhYvtAN4
     console.error("failed to load the PayPal JS SDK script", err);
 });*/
 
-const Prices = [["empty"],["empty","17.5","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","17.5","21"],["empty","23.9"],["empty","27.9","23.9","17.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9","23.9"],["empty","27.9","27.9","23.9"]];
-const Cloths = [["empty"],["empty","Ranita bebe niña","Peto bebe niño","Vestido niña","Polera niño"],["empty","pantalon niño","vestido niña","peto niño"],["empty","ranita niño cuadros","vestido niña cuadros"],["empty","jersei unisex animales"],["empty","vestido bebe niña","ranita bebe niña","pantalon niño","pelele bebe niño"],["empty","Vestido niña","Peto niño","Pelele bebe niño","Ranita bebe niña"],["empty","peto niño","vestido niña","pelele bebe niño","ranita bebe niña"],["empty","vestido bebe niña","peto niño","pelele bebe niño"]];
+const Prices = [["empty"],["empty","17.5","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","17.5","21"],["empty","19.9"],["empty","23.9","23.9","27.9","17.9"],["empty","23.9","23.9","27.9","27.9"],["empty","23.9","23.9","27.9","27.9"],["empty","23.9","27.9","27.9"]];
+const Cloths = [["empty"],["empty","Ranita bebe","Peto bebe","Vestido","Polera"],["empty","Pantalón","Vestido","Peto"],["empty","Ranita bebe","Vestido"],["empty","Jersei animales"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],["empty", "Pelele bebe", "Vestido", "Peto"]];
+
+
 
 var lista =  doShowAll();
 
@@ -30,16 +32,19 @@ function current_tab(){
     for (let index = 0; index < nombres_coleccion.length; index++) {
         nombres_coleccion[index].style.color = "rgb(164, 164, 164)"
     }
-    if (parseInt(localStorage.Collection)<5) {
+    console.log(parseInt(localStorage.Collection)-4,"esto es el resultado de coleccion menos 4")
+    if (parseInt(localStorage.Collection)<4) {
         if (parseInt(localStorage.Collection)==0) {
-            nombres_coleccion[5].style.color = "rgb(0, 0, 0)";
-        }else if (parseInt(localStorage.Collection)==-1) {
             nombres_coleccion[6].style.color = "rgb(0, 0, 0)";
+        }else if (parseInt(localStorage.Collection)==-1) {
+            nombres_coleccion[7].style.color = "rgb(0, 0, 0)";
+        }else if (parseInt(localStorage.Collection)==-2) {
+            
         }else{
-            nombres_coleccion[4].style.color = "rgb(0, 0, 0)";
+            nombres_coleccion[5].style.color = "rgb(0, 0, 0)";
         }
     }else{
-        nombres_coleccion[parseInt(localStorage.Collection)-5].style.color = "rgb(0, 0, 0)";
+        nombres_coleccion[parseInt(localStorage.Collection)-4].style.color = "rgb(0, 0, 0)";
     }
     
 }
@@ -48,7 +53,7 @@ function fotosColeccion() {
     var html = " "
     for (let indx = 1; indx < Cloths[parseInt(localStorage.Collection)].length; indx++) {
         html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br>';
-        if (parseInt(localStorage.Collection) < 5){
+        if (parseInt(localStorage.Collection) < 4){
             let old_price = parseInt(parseFloat(Prices[parseInt(localStorage.Collection)][indx])/(0.7));
             html += '<p id="p_old_price"><s>'+ old_price +' €</s></p>';
         }
