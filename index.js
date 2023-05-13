@@ -235,7 +235,7 @@ paypal.Buttons({
             Subject : "Confirmación de su compra en Pistachin",
             Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista
         }).then(
-            message => alert("Gracias "+ nombrepila +" por tu compra. Pronto le llegará la confirmación del pedido a su mail, por favor revise tambien su buzon de correo no deseado, si tiene problemas no dude en contactarnos a traves de la pestaña de contacto en esta página web o por nuestro correo info@pistachin.shop")
+            message => alert("Gracias "+ nombrepila +" por tu compra. Enseguida gestinonaremos su pedido y le llegará la confirmación del pedido con el numero de seguimiento a su mail una vez procesado (podría demorarse de 1-2 días), por otro lado, cuando le contactemos por mail es posible que el mensaje le llegue a su buzón de correo no deseado, asegurese de comprobar también dicho buzón, si tiene problemas no dude en contactarnos a traves de la pestaña de contacto de esta página web o a través de nuestro correo info@pistachin.shop")
         );
         Email.send({
             SecureToken : "c777db29-0be1-40f7-b6ac-937270378585",
