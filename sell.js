@@ -1,4 +1,15 @@
+var paypalItems = new Array();
 var lista =  doShowAll();
+
+/*modelo: [{
+    name: string,
+    description: string,
+    unit_amount: {
+        currency_code: string,
+        value: string,
+    },
+    quantity: string
+}]*/
 
 var modelo = [
     {
@@ -6,7 +17,7 @@ var modelo = [
       "description": "a granel", 
       "unit_amount": {
         "currency_code": "EUR",
-        "value": "1"
+        "value": "7.9"
       },
       "quantity": "1"
     },{
@@ -14,7 +25,7 @@ var modelo = [
       "description": "de color naranja", /* Item details will also be in the completed paypal.com transaction view */
       "unit_amount": {
         "currency_code": "EUR",
-        "value": "1"
+        "value": "20"
       },
       "quantity": "1"
     },
@@ -127,9 +138,15 @@ navToggle.addEventListener('click', () => {
 
 function doShowAll() {
     if (true) {
+        var envio = false;
         var key = "";
         var priceKey = "";
-        var paypalItems = [];
+        if (typeof paypalItems !== 'undefined' && paypalItems.length > 0) {
+            while(paypalItems.length > 0) {
+                paypalItems.pop();
+            }
+        }
+        //paypalItems.splice(0,paypalItems.length)
         var summ = 0.0;
         var list = "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>";
         var i = 0;
@@ -142,7 +159,7 @@ function doShowAll() {
             if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){
                           
                 priceKey = "$" + key;
-                paypalItems.push(Object.create({
+                paypalItems.push(new Object({
                     "name": key, 
                     "description": priceKey,
                     "unit_amount": {
@@ -157,9 +174,28 @@ function doShowAll() {
                     + localStorage.getItem(key) + "</td><td>" + localStorage.getItem(priceKey) + "€</td><td>" + Math.round(parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key))* 100) / 100 + "€</td></tr>";
                 summ += parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key));
                 currentPaypalItem++;
+                console.log("currentPaypalItem",currentPaypalItem,paypalItems)
+                console.log(JSON.stringify(paypalItems))
                 totalItems += parseInt(localStorage.getItem(key));
+                envio = true;
             }
         }
+        if (envio) {
+            envio = false;
+            paypalItems.push(new Object({
+                "name": "envio", 
+                "description": "envio dentro de la peninsula iberica",
+                "unit_amount": {
+                  "currency_code": "EUR",
+                  "value": "2.9"
+                },
+                "quantity": "1"
+            }));
+            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + "2.9" + "€</td><td>" + "2.9" + "€</td></tr>";
+            summ += 2.9;
+        }
+        console.log("currentPaypalItem",currentPaypalItem,paypalItems)
+        console.log(JSON.stringify(paypalItems))
         document.getElementById('lblCartCount').innerHTML = totalItems;
         if(totalItems==0){
             document.getElementById('lblCartCount').style.display ="none";
@@ -179,7 +215,8 @@ function doShowAll() {
         //You can use jQuery, too.
         document.getElementById('list').innerHTML = list;
         //paypalItems2 = [...paypalItems];
-        return paypalItems;
+        //return paypalItems;
+        return paypalItems
     } else {
         alert('Cannot save shopping list as your browser does not support HTML 5');
     }
@@ -259,7 +296,7 @@ document.getElementById('htmlPrecio').innerHTML = Prices[parseInt(curentCollecti
 
 paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
-    createOrder: (data, actions) => {
+    /*createOrder: (data, actions) => {
         return actions.order.create({
             purchase_units: [{
                 amount: {
@@ -268,24 +305,52 @@ paypal.Buttons({
             }]
         });
         },
-    /*createOrder: (data, actions) => {
-        console.log(JSON.stringify(modelo),sendNetEntities(lista))
-    return actions.order.create({
-        purchase_units: [{
-            "amount": {
-                "currency_code": "EUR",
-                "value": localStorage.payAmount,
-                "breakdown": {
-                    "item_total": {  
-                        "currency_code": "EUR",
-                        "value": localStorage.payAmount
+        
+        var paypalItems = [];
+        for (i = 0; i <= localStorage.length-1; i++) {
+            key = localStorage.key(i);
+            if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){
+                          
+                priceKey = "$" + key;
+                paypalItems.push(Object.create({
+                    "name": key, 
+                    "description": priceKey,
+                    "unit_amount": {
+                      "currency_code": "EUR",
+                      "value": localStorage.getItem(priceKey)
+                    },
+                    "quantity": localStorage.getItem(key)
+                }));
+                console.log("esto es el value")
+                console.log(paypalItems[paypalItems.length-1].unit_amount.value);
+                currentPaypalItem++;
+                totalItems += parseInt(localStorage.getItem(key));
+            }
+        }
+        console.log("estos son los items para paypal",paypalItems)
+
+        */
+        
+    createOrder: (data, actions) => {
+        //console.log(JSON.stringify(modelo),sendNetEntities(lista))
+        console.log("paypal items al formalizar compra",lista)
+        console.log(JSON.stringify(lista))
+        return actions.order.create({
+            purchase_units: [{
+                "amount": {
+                    "currency_code": "EUR",
+                    "value": localStorage.payAmount,
+                    "breakdown": {
+                        "item_total": {  
+                            "currency_code": "EUR",
+                            "value": localStorage.payAmount
+                        }
                     }
-                }
-            },
-            "items":  lista
-        }]
-    });
-    }*/
+                },
+                "items":  lista
+            }]
+        });
+    },
     // Finalize the transaction after payer approval
     onApprove: (data, actions) => {
     return actions.order.capture().then(function(orderData) {
@@ -307,7 +372,7 @@ paypal.Buttons({
             To : direccionCliente,
             From : 'info@pistachin.shop',
             Subject : "Confirmación de su compra en Pistachin",
-            Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista
+            Body : "<p>Compra de "+ nombrepila +"</p><br>" + document.getElementById('list').innerHTML
         }).then(
             message => alert("Gracias "+ nombrepila +" por tu compra. Enseguida gestinonaremos su pedido y le llegará la confirmación del pedido con el numero de seguimiento a su mail una vez procesado (podría demorarse de 1-2 días), por otro lado, cuando le contactemos por mail es posible que el mensaje le llegue a su buzón de correo no deseado, asegurese de comprobar también dicho buzón, si tiene problemas no dude en contactarnos a traves de la pestaña de contacto de esta página web o a través de nuestro correo info@pistachin.shop")
         );
@@ -316,11 +381,10 @@ paypal.Buttons({
             To : 'info@pistachin.shop',
             From : 'info@pistachin.shop',
             Subject : "Nueva compra",
-            Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista+"<br><p>" + JSON.stringify(orderData, null, 2) + "</p>" //"compra de:" + array + " and " +string
+            Body : "<p>Compra de "+ nombrepila +"</p><br>"+ document.getElementById('list').innerHTML +"<br><br><p>" + JSON.stringify(orderData, null, 2) + "</p>" //"compra de:" + array + " and " +string
         }).then(
-          console.log("purchase completed")
+            ClearAll()     
         );
-        ClearAll();
     });
     }
 }).render('#paypal-button-container');

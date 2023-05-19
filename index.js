@@ -12,7 +12,7 @@ const Prices = [["empty"],["empty","17.5","13,9","20,9","13,9"],["empty","9.9","
 const Cloths = [["empty"],["empty","Ranita bebe","Peto bebe","Vestido","Polera"],["empty","Pantalón","Vestido","Peto"],["empty","Ranita bebe","Vestido"],["empty","Jersei animales"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],["empty", "Pelele bebe", "Vestido", "Peto"]];
 
 
-
+var paypalItems = new Array();
 var lista =  doShowAll();
 
 try {
@@ -39,7 +39,7 @@ function current_tab(){
         }else if (parseInt(localStorage.Collection)==-1) {
             nombres_coleccion[7].style.color = "rgb(0, 0, 0)";
         }else if (parseInt(localStorage.Collection)==-2) {
-            
+            //home index.html
         }else{
             nombres_coleccion[5].style.color = "rgb(0, 0, 0)";
         }
@@ -89,9 +89,14 @@ var modelo = [
 
 function doShowAll() {
     if (true) {
+        var envio = false;
         var key = "";
         var priceKey = "";
-        var paypalItems = [];
+        if (typeof paypalItems !== 'undefined' && paypalItems.length > 0) {
+            while(paypalItems.length > 0) {
+                paypalItems.pop();
+            }
+        }
         var summ = 0.0;
         var list = "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>";
         var i = 0;
@@ -101,14 +106,42 @@ function doShowAll() {
         //For a more advanced feature, you can set a cap on max items in the cart.
         for (i = 0; i <= localStorage.length-1; i++) {
             key = localStorage.key(i);
-            if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){              
+            if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){
+                          
                 priceKey = "$" + key;
+                paypalItems.push(new Object({
+                    "name": key, 
+                    "description": priceKey,
+                    "unit_amount": {
+                      "currency_code": "EUR",
+                      "value": localStorage.getItem(priceKey)
+                    },
+                    "quantity": localStorage.getItem(key)
+                }));
+                console.log("esto es el value")
+                console.log(paypalItems[paypalItems.length-1].unit_amount.value);
                 list += "<tr><td>" + key + "</td><td>"
                     + localStorage.getItem(key) + "</td><td>" + localStorage.getItem(priceKey) + "€</td><td>" + Math.round(parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key))* 100) / 100 + "€</td></tr>";
                 summ += parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key));
+                console.log("currentPaypalItem",currentPaypalItem,paypalItems);
                 currentPaypalItem++;
                 totalItems += parseInt(localStorage.getItem(key));
+                envio = true;
             }
+        }
+        if (envio) {
+            envio = false;
+            paypalItems.push(new Object({
+                "name": "envio", 
+                "description": "envio dentro de la peninsula iberica",
+                "unit_amount": {
+                  "currency_code": "EUR",
+                  "value": "2.9"
+                },
+                "quantity": "1"
+            }));
+            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + "2.9" + "€</td><td>" + "2.9" + "€</td></tr>";
+            summ += 2.9;
         }
         document.getElementById('lblCartCount').innerHTML = totalItems;
         if(totalItems==0){
@@ -129,7 +162,8 @@ function doShowAll() {
         //You can use jQuery, too.
         document.getElementById('list').innerHTML = list;
         //paypalItems2 = [...paypalItems];
-        return list;
+        //return paypalItems;
+        return paypalItems
     } else {
         alert('Cannot save shopping list as your browser does not support HTML 5');
     }
@@ -203,19 +237,26 @@ function setCollection(coleccion){
 }
 
 
-
-
-
 paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
     createOrder: (data, actions) => {
-    return actions.order.create({
-        purchase_units: [{
-            amount: {
-               value: localStorage.payAmount
-             }
-        }]
-    });
+        //console.log(JSON.stringify(modelo),sendNetEntities(lista))
+        console.log("paypal items",lista) 
+        return actions.order.create({
+            purchase_units: [{
+                "amount": {
+                    "currency_code": "EUR",
+                    "value": localStorage.payAmount,
+                    "breakdown": {
+                        "item_total": {  
+                            "currency_code": "EUR",
+                            "value": localStorage.payAmount
+                        }
+                    }
+                },
+                "items":  lista
+            }]
+        });
     },
     // Finalize the transaction after payer approval
     onApprove: (data, actions) => {
@@ -238,7 +279,7 @@ paypal.Buttons({
             To : direccionCliente,
             From : 'info@pistachin.shop',
             Subject : "Confirmación de su compra en Pistachin",
-            Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista
+            Body : "<p>Compra de "+ nombrepila +"</p><br>" + document.getElementById('list').innerHTML
         }).then(
             message => alert("Gracias "+ nombrepila +" por tu compra. Enseguida gestinonaremos su pedido y le llegará la confirmación del pedido con el numero de seguimiento a su mail una vez procesado (podría demorarse de 1-2 días), por otro lado, cuando le contactemos por mail es posible que el mensaje le llegue a su buzón de correo no deseado, asegurese de comprobar también dicho buzón, si tiene problemas no dude en contactarnos a traves de la pestaña de contacto de esta página web o a través de nuestro correo info@pistachin.shop")
         );
@@ -247,11 +288,10 @@ paypal.Buttons({
             To : 'info@pistachin.shop',
             From : 'info@pistachin.shop',
             Subject : "Nueva compra",
-            Body : "<p>Compra de "+ nombrepila +"</p><br>"+lista+"<br><p>" + JSON.stringify(orderData, null, 2) + "</p>" //"compra de:" + array + " and " +string
+            Body : "<p>Compra de "+ nombrepila +"</p><br>" + document.getElementById('lblCartCount').innerHTML//JSON.stringify(lista, null, 2) +"<br><br><p>" + JSON.stringify(orderData, null, 2) + "</p>" //"compra de:" + array + " and " +string
         }).then(
-          console.log("purchase completed")
+            ClearAll()     
         );
-        ClearAll();
     });
     }
-}).render('#paypal-button-container');    
+}).render('#paypal-button-container');
