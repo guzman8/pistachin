@@ -1,3 +1,5 @@
+var lista_mail = "";
+var list = "";
 var paypalItems = new Array();
 var lista =  doShowAll();
 
@@ -54,9 +56,32 @@ function current_tab(){
 }
 
 const Collections = ["empty","Nube", "Pana", "Cerdanya","Bosque","Menorca","Wild","Sunny","Sailor"];
-const Sizes = [["empty"],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"],["2-3 años","3-4 años","4-5 años"]],["empty",["2-3 años","3-4 años","4-5 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"]],["empty",["6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["3-6 meses","6-9 meses","9-12 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["3-6 meses","6-9 meses","9-12 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["3-6 meses","6-9 meses","9-12 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años","6-7 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],["empty",["3-6 meses","6-9 meses","9-12 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]]];
-const Prices = [["empty"],["empty","17.5","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","17.5","21"],["empty","19.9"],["empty","23.9","23.9","27.9","17.9"],["empty","23.9","23.9","27.9","27.9"],["empty","23.9","23.9","27.9","27.9"],["empty","23.9","27.9","27.9"]];
-const Cloths = [["empty"],["empty","Ranita bebe","Peto bebe","Vestido","Polera"],["empty","Pantalón","Vestido","Peto"],["empty","Ranita bebe","Vestido"],["empty","Jersei animales"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],["empty", "Pelele bebe", "Vestido", "Peto"]];
+const Sizes = [["empty"],
+                ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"],["2-3 años","3-4 años","4-5 años"]],
+                ["empty",["2-3 años","3-4 años","4-5 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
+                ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"]],["empty",["6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
+                ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["3-6 meses","6-9 meses","9-12 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
+                ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["3-6 meses","6-9 meses","9-12 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
+                ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["3-6 meses","6-9 meses","9-12 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años","6-7 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
+                ["empty",["3-6 meses","6-9 meses","9-12 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]]];
+const Prices = [["empty"],
+                ["empty","17.5","13.9","20.9","13.9"],
+                ["empty","9.9","14.9","14.9"],
+                ["empty","17.5","21"],
+                ["empty","19.9"],
+                ["empty","23.9","23.9","27.9","17.9"],
+                ["empty","23.9","23.9","27.9","27.9"],
+                ["empty","23.9","23.9","27.9","27.9"],
+                ["empty","23.9","27.9","27.9"]];
+const Cloths = [["empty"],
+                ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
+                ["empty","Pantalón","Vestido","Peto"],
+                ["empty","Ranita bebe","Vestido"],
+                ["empty","Jersei animales"],
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
+                ["empty", "Pelele bebe", "Vestido", "Peto"]];
 
 try {
     var tallas = tallaPrenda();
@@ -148,7 +173,7 @@ function doShowAll() {
         }
         //paypalItems.splice(0,paypalItems.length)
         var summ = 0.0;
-        var list = "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>";
+        list = "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>";
         var i = 0;
         var currentPaypalItem = 0;
         var totalItems = 0;
@@ -182,17 +207,17 @@ function doShowAll() {
         }
         if (envio) {
             envio = false;
-            paypalItems.push(new Object({
+            /*paypalItems.push(new Object({
                 "name": "envio", 
                 "description": "envio dentro de la peninsula iberica",
                 "unit_amount": {
                   "currency_code": "EUR",
-                  "value": "2.9"
+                  "value": "4.9"
                 },
                 "quantity": "1"
-            }));
-            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + "2.9" + "€</td><td>" + "2.9" + "€</td></tr>";
-            summ += 2.9;
+            }));*/
+            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + "4.9" + "€</td><td>" + "4.9" + "€</td></tr>";
+            //summ += 4.9;
         }
         console.log("currentPaypalItem",currentPaypalItem,paypalItems)
         console.log(JSON.stringify(paypalItems))
@@ -208,7 +233,7 @@ function doShowAll() {
         if (list == "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>") {
             list += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
         }else{
-            list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + localStorage.payAmount + "€</i></td></tr>"
+            list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + Math.round((parseFloat(localStorage.payAmount) + 4.9) * 100) / 100 + "€</i></td></tr>"
         }
         list += "</table>";
         //Bind the data to HTML table.
@@ -216,6 +241,7 @@ function doShowAll() {
         document.getElementById('list').innerHTML = list;
         //paypalItems2 = [...paypalItems];
         //return paypalItems;
+        lista_mail = list;
         return paypalItems
     } else {
         alert('Cannot save shopping list as your browser does not support HTML 5');
@@ -296,40 +322,6 @@ document.getElementById('htmlPrecio').innerHTML = Prices[parseInt(curentCollecti
 
 paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
-    /*createOrder: (data, actions) => {
-        return actions.order.create({
-            purchase_units: [{
-                amount: {
-                   value: localStorage.payAmount
-                 }
-            }]
-        });
-        },
-        
-        var paypalItems = [];
-        for (i = 0; i <= localStorage.length-1; i++) {
-            key = localStorage.key(i);
-            if(key != 'Cloth' && key != 'Collection' && key != 'payAmount' && key != '__paypal_storage__' && key[0] != "$"){
-                          
-                priceKey = "$" + key;
-                paypalItems.push(Object.create({
-                    "name": key, 
-                    "description": priceKey,
-                    "unit_amount": {
-                      "currency_code": "EUR",
-                      "value": localStorage.getItem(priceKey)
-                    },
-                    "quantity": localStorage.getItem(key)
-                }));
-                console.log("esto es el value")
-                console.log(paypalItems[paypalItems.length-1].unit_amount.value);
-                currentPaypalItem++;
-                totalItems += parseInt(localStorage.getItem(key));
-            }
-        }
-        console.log("estos son los items para paypal",paypalItems)
-
-        */
         
     createOrder: (data, actions) => {
         //console.log(JSON.stringify(modelo),sendNetEntities(lista))
@@ -339,12 +331,16 @@ paypal.Buttons({
             purchase_units: [{
                 "amount": {
                     "currency_code": "EUR",
-                    "value": localStorage.payAmount,
+                    "value": Math.round((parseFloat(localStorage.payAmount) + 4.9) * 100) / 100,
                     "breakdown": {
                         "item_total": {  
                             "currency_code": "EUR",
                             "value": localStorage.payAmount
-                        }
+                        },
+                        "shipping": {
+                            "currency_code": "EUR",
+                            "value": "4.90"
+                        },
                     }
                 },
                 "items":  lista
@@ -372,7 +368,7 @@ paypal.Buttons({
             To : direccionCliente,
             From : 'info@pistachin.shop',
             Subject : "Confirmación de su compra en Pistachin",
-            Body : "<p>Compra de "+ nombrepila +"</p><br>" + document.getElementById('list').innerHTML
+            Body : "<p>Hola "+ nombrepila +", aqui tiene los detalles de su compra en Pistachin kids </p><br>" + lista_mail
         }).then(
             message => alert("Gracias "+ nombrepila +" por tu compra. Enseguida gestinonaremos su pedido y le llegará la confirmación del pedido con el numero de seguimiento a su mail una vez procesado (podría demorarse de 1-2 días), por otro lado, cuando le contactemos por mail es posible que el mensaje le llegue a su buzón de correo no deseado, asegurese de comprobar también dicho buzón, si tiene problemas no dude en contactarnos a traves de la pestaña de contacto de esta página web o a través de nuestro correo info@pistachin.shop")
         );
@@ -381,7 +377,7 @@ paypal.Buttons({
             To : 'info@pistachin.shop',
             From : 'info@pistachin.shop',
             Subject : "Nueva compra",
-            Body : "<p>Compra de "+ nombrepila +"</p><br>"+ document.getElementById('list').innerHTML +"<br><br><p>" + JSON.stringify(orderData, null, 2) + "</p>" //"compra de:" + array + " and " +string
+            Body : "<p>Compra de "+ nombrepila +"</p><br>"+ lista_mail +"<br><br><p>" + JSON.stringify(orderData, null, 2) + "</p>" //"compra de:" + array + " and " +string
         }).then(
             ClearAll()     
         );

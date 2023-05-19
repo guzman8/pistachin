@@ -8,10 +8,27 @@ loadScript({ "client-id": "Ae6_RtNj5FP408yPLC_rU5oS7GDUhDEVeP28akNpOCC_IKhYvtAN4
     console.error("failed to load the PayPal JS SDK script", err);
 });*/
 
-const Prices = [["empty"],["empty","17.5","13,9","20,9","13,9"],["empty","9.9","14.9","14.9"],["empty","17.5","21"],["empty","19.9"],["empty","23.9","23.9","27.9","17.9"],["empty","23.9","23.9","27.9","27.9"],["empty","23.9","23.9","27.9","27.9"],["empty","23.9","27.9","27.9"]];
-const Cloths = [["empty"],["empty","Ranita bebe","Peto bebe","Vestido","Polera"],["empty","Pantalón","Vestido","Peto"],["empty","Ranita bebe","Vestido"],["empty","Jersei animales"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],["empty", "Pelele bebe", "Vestido", "Peto"]];
+const Prices = [["empty"],
+                ["empty","17.5","13.9","20.9","13.9"],
+                ["empty","9.9","14.9","14.9"],
+                ["empty","17.5","21"],
+                ["empty","19.9"],
+                ["empty","23.9","23.9","27.9","17.9"],
+                ["empty","23.9","23.9","27.9","27.9"],
+                ["empty","23.9","23.9","27.9","27.9"],
+                ["empty","23.9","27.9","27.9"]];
+const Cloths = [["empty"],
+                ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
+                ["empty","Pantalón","Vestido","Peto"],
+                ["empty","Ranita bebe","Vestido"],
+                ["empty","Jersei animales"],
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
+                ["empty", "Pelele bebe", "Vestido", "Peto"]];
 
-
+var lista_mail = "";
+var list = "";                
 var paypalItems = new Array();
 var lista =  doShowAll();
 
@@ -87,7 +104,7 @@ var modelo = [
     },
   ];
 
-function doShowAll() {
+  function doShowAll() {
     if (true) {
         var envio = false;
         var key = "";
@@ -97,8 +114,9 @@ function doShowAll() {
                 paypalItems.pop();
             }
         }
+        //paypalItems.splice(0,paypalItems.length)
         var summ = 0.0;
-        var list = "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>";
+        list = "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>";
         var i = 0;
         var currentPaypalItem = 0;
         var totalItems = 0;
@@ -123,26 +141,29 @@ function doShowAll() {
                 list += "<tr><td>" + key + "</td><td>"
                     + localStorage.getItem(key) + "</td><td>" + localStorage.getItem(priceKey) + "€</td><td>" + Math.round(parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key))* 100) / 100 + "€</td></tr>";
                 summ += parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key));
-                console.log("currentPaypalItem",currentPaypalItem,paypalItems);
                 currentPaypalItem++;
+                console.log("currentPaypalItem",currentPaypalItem,paypalItems)
+                console.log(JSON.stringify(paypalItems))
                 totalItems += parseInt(localStorage.getItem(key));
                 envio = true;
             }
         }
         if (envio) {
             envio = false;
-            paypalItems.push(new Object({
+            /*paypalItems.push(new Object({
                 "name": "envio", 
                 "description": "envio dentro de la peninsula iberica",
                 "unit_amount": {
                   "currency_code": "EUR",
-                  "value": "2.9"
+                  "value": "4.9"
                 },
                 "quantity": "1"
-            }));
-            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + "2.9" + "€</td><td>" + "2.9" + "€</td></tr>";
-            summ += 2.9;
+            }));*/
+            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + "4.9" + "€</td><td>" + "4.9" + "€</td></tr>";
+            //summ += 4.9;
         }
+        console.log("currentPaypalItem",currentPaypalItem,paypalItems)
+        console.log(JSON.stringify(paypalItems))
         document.getElementById('lblCartCount').innerHTML = totalItems;
         if(totalItems==0){
             document.getElementById('lblCartCount').style.display ="none";
@@ -155,7 +176,7 @@ function doShowAll() {
         if (list == "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>") {
             list += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
         }else{
-            list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + localStorage.payAmount + "€</i></td></tr>"
+            list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + Math.round((parseFloat(localStorage.payAmount) + 4.9) * 100) / 100 + "€</i></td></tr>"
         }
         list += "</table>";
         //Bind the data to HTML table.
@@ -163,6 +184,7 @@ function doShowAll() {
         document.getElementById('list').innerHTML = list;
         //paypalItems2 = [...paypalItems];
         //return paypalItems;
+        lista_mail = list;
         return paypalItems
     } else {
         alert('Cannot save shopping list as your browser does not support HTML 5');
@@ -239,19 +261,25 @@ function setCollection(coleccion){
 
 paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
+        
     createOrder: (data, actions) => {
         //console.log(JSON.stringify(modelo),sendNetEntities(lista))
-        console.log("paypal items",lista) 
+        console.log("paypal items al formalizar compra",lista)
+        console.log(JSON.stringify(lista))
         return actions.order.create({
             purchase_units: [{
                 "amount": {
                     "currency_code": "EUR",
-                    "value": localStorage.payAmount,
+                    "value": Math.round((parseFloat(localStorage.payAmount) + 4.9) * 100) / 100,
                     "breakdown": {
                         "item_total": {  
                             "currency_code": "EUR",
                             "value": localStorage.payAmount
-                        }
+                        },
+                        "shipping": {
+                            "currency_code": "EUR",
+                            "value": "4.90"
+                        },
                     }
                 },
                 "items":  lista
@@ -279,7 +307,7 @@ paypal.Buttons({
             To : direccionCliente,
             From : 'info@pistachin.shop',
             Subject : "Confirmación de su compra en Pistachin",
-            Body : "<p>Compra de "+ nombrepila +"</p><br>" + document.getElementById('list').innerHTML
+            Body : "<p>Hola "+ nombrepila +", aqui tiene los detalles de su compra en Pistachin kids </p><br>" + lista_mail
         }).then(
             message => alert("Gracias "+ nombrepila +" por tu compra. Enseguida gestinonaremos su pedido y le llegará la confirmación del pedido con el numero de seguimiento a su mail una vez procesado (podría demorarse de 1-2 días), por otro lado, cuando le contactemos por mail es posible que el mensaje le llegue a su buzón de correo no deseado, asegurese de comprobar también dicho buzón, si tiene problemas no dude en contactarnos a traves de la pestaña de contacto de esta página web o a través de nuestro correo info@pistachin.shop")
         );
@@ -288,7 +316,7 @@ paypal.Buttons({
             To : 'info@pistachin.shop',
             From : 'info@pistachin.shop',
             Subject : "Nueva compra",
-            Body : "<p>Compra de "+ nombrepila +"</p><br>" + document.getElementById('lblCartCount').innerHTML//JSON.stringify(lista, null, 2) +"<br><br><p>" + JSON.stringify(orderData, null, 2) + "</p>" //"compra de:" + array + " and " +string
+            Body : "<p>Compra de "+ nombrepila +"</p><br>"+ lista_mail +"<br><br><p>" + JSON.stringify(orderData, null, 2) + "</p>" //"compra de:" + array + " and " +string
         }).then(
             ClearAll()     
         );
