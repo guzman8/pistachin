@@ -73,8 +73,13 @@ function fotosColeccion() {
         if (parseInt(localStorage.Collection) < 4){
             let old_price = parseInt(parseFloat(Prices[parseInt(localStorage.Collection)][indx])/(0.7));
             html += '<p id="p_old_price"><s>'+ old_price +' €</s></p>';
+            html += '<p id="p_new_price" style="color: #c70d0d">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
+            //document.getElementById('p_new_price').style.color ="#c70d0d";
+        }else{
+            html += '<p id="p_new_price"  style="color: black">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
+            //document.getElementById('p_new_price').style.color ="black";
         }
-        html += '<p id="p_new_price">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
+        
     }
     console.log(html);
     return html;
