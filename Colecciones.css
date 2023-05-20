@@ -3,13 +3,13 @@
     display: grid;
     width: 1fr;
     height: auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 11px 10px;
     grid-auto-flow: row;
     grid-template-areas:
-      ". . . ."
-      ". . . .";
+      ". . . "
+      ". . . ";
 }
 
 #HTMLproductos div {

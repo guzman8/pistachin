@@ -55,33 +55,34 @@ function current_tab(){
     
 }
 
-const Collections = ["empty","Nube", "Pana", "Cerdanya","Bosque","Menorca","Wild","Sunny","Sailor"];
+const Collections = ["empty","Nube","Pana","Cerdanya","Menorca","Wild","Sunny","Sailor","Bosque"];
 const Sizes = [["empty"],
                 ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"],["2-3 años","3-4 años","4-5 años"]],
                 ["empty",["2-3 años","3-4 años","4-5 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
-                ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"]],["empty",["6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
+                ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"]],
                 ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["3-6 meses","6-9 meses","9-12 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
                 ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["3-6 meses","6-9 meses","9-12 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
                 ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["3-6 meses","6-9 meses","9-12 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años","6-7 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
-                ["empty",["3-6 meses","6-9 meses","9-12 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]]];
+                ["empty",["3-6 meses","6-9 meses","9-12 meses"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
+                ["empty",["6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]]];
 const Prices = [["empty"],
                 ["empty","17.5","13.9","20.9","13.9"],
                 ["empty","9.9","14.9","14.9"],
                 ["empty","17.5","21"],
-                ["empty","19.9"],
                 ["empty","23.9","23.9","27.9","17.9"],
                 ["empty","23.9","23.9","27.9","27.9"],
                 ["empty","23.9","23.9","27.9","27.9"],
-                ["empty","23.9","27.9","27.9"]];
+                ["empty","23.9","27.9","27.9"],
+                ["empty","19.9"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
                 ["empty","Pantalón","Vestido","Peto"],
                 ["empty","Ranita bebe","Vestido"],
-                ["empty","Jersei animales"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
-                ["empty", "Pelele bebe", "Vestido", "Peto"]];
+                ["empty", "Pelele bebe", "Vestido", "Peto"],
+                ["empty","Jersei animales"]];
 
 try {
     var tallas = tallaPrenda();

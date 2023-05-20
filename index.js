@@ -12,20 +12,20 @@ const Prices = [["empty"],
                 ["empty","17.5","13.9","20.9","13.9"],
                 ["empty","9.9","14.9","14.9"],
                 ["empty","17.5","21"],
-                ["empty","19.9"],
                 ["empty","23.9","23.9","27.9","17.9"],
                 ["empty","23.9","23.9","27.9","27.9"],
                 ["empty","23.9","23.9","27.9","27.9"],
-                ["empty","23.9","27.9","27.9"]];
+                ["empty","23.9","27.9","27.9"],
+                ["empty","19.9"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
                 ["empty","Pantalón","Vestido","Peto"],
                 ["empty","Ranita bebe","Vestido"],
-                ["empty","Jersei animales"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
-                ["empty", "Pelele bebe", "Vestido", "Peto"]];
+                ["empty", "Pelele bebe", "Vestido", "Peto"],
+                ["empty","Jersei animales"]];
 
 var lista_mail = "";
 var list = "";                
@@ -50,13 +50,14 @@ function current_tab(){
         nombres_coleccion[index].style.color = "rgb(164, 164, 164)"
     }
     console.log(parseInt(localStorage.Collection)-4,"esto es el resultado de coleccion menos 4")
-    if (parseInt(localStorage.Collection)<4) {
+    //var fileName = window.location.pathname.split("/").pop();
+    if (window.location.pathname.split("/").pop() == "index.html") {
+        //home index.html
+    }else if (parseInt(localStorage.Collection)<4) {       
         if (parseInt(localStorage.Collection)==0) {
             nombres_coleccion[6].style.color = "rgb(0, 0, 0)";
         }else if (parseInt(localStorage.Collection)==-1) {
             nombres_coleccion[7].style.color = "rgb(0, 0, 0)";
-        }else if (parseInt(localStorage.Collection)==-2) {
-            //home index.html
         }else{
             nombres_coleccion[5].style.color = "rgb(0, 0, 0)";
         }
