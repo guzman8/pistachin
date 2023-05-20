@@ -25,7 +25,7 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
                 ["empty", "Pelele bebe", "Vestido", "Peto"],
-                ["empty","Jersei animales"]];
+                ["empty","Jersey animales"]];
 
 var lista_mail = "";
 var list = "";                
