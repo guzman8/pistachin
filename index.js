@@ -51,6 +51,7 @@ function current_tab(){
     }
     console.log(parseInt(localStorage.Collection)-4,"esto es el resultado de coleccion menos 4")
     //var fileName = window.location.pathname.split("/").pop();
+    console.log("esta es la url", window.location.pathname.split("/").pop())
     if (window.location.pathname.split("/").pop() == "index.html") {
         //home index.html
     }else if (parseInt(localStorage.Collection)<4) {       
