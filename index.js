@@ -39,7 +39,6 @@ try {
     localStorage.Cloth = "01";
     
   } catch (error) {
-    console.log("error aqui no puedo montar la colección",error);
     // Expected output: ReferenceError: nonExistentFunction is not defined
     // (Note: the exact output may be browser-dependent)
 }
@@ -49,10 +48,8 @@ function current_tab(){
     for (let index = 0; index < nombres_coleccion.length; index++) {
         nombres_coleccion[index].style.color = "rgb(164, 164, 164)"
     }
-    console.log(parseInt(localStorage.Collection)-4,"esto es el resultado de coleccion menos 4")
     //var fileName = window.location.pathname.split("/").pop();
-    console.log("esta es la url", window.location.pathname.split("/").pop())
-    if (window.location.pathname.split("/").pop() == "index.html") {
+    if (window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "") {
         //home index.html
     }else if (parseInt(localStorage.Collection)<4) {       
         if (parseInt(localStorage.Collection)==0) {
@@ -83,7 +80,6 @@ function fotosColeccion() {
         }
         
     }
-    console.log(html);
     return html;
 }
 
@@ -143,14 +139,10 @@ var modelo = [
                     },
                     "quantity": localStorage.getItem(key)
                 }));
-                console.log("esto es el value")
-                console.log(paypalItems[paypalItems.length-1].unit_amount.value);
                 list += "<tr><td>" + key + "</td><td>"
                     + localStorage.getItem(key) + "</td><td>" + localStorage.getItem(priceKey) + "€</td><td>" + Math.round(parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key))* 100) / 100 + "€</td></tr>";
                 summ += parseFloat(localStorage.getItem(priceKey))*parseFloat(localStorage.getItem(key));
                 currentPaypalItem++;
-                console.log("currentPaypalItem",currentPaypalItem,paypalItems)
-                console.log(JSON.stringify(paypalItems))
                 totalItems += parseInt(localStorage.getItem(key));
                 envio = true;
             }
@@ -169,8 +161,6 @@ var modelo = [
             list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + "4.9" + "€</td><td>" + "4.9" + "€</td></tr>";
             //summ += 4.9;
         }
-        console.log("currentPaypalItem",currentPaypalItem,paypalItems)
-        console.log(JSON.stringify(paypalItems))
         document.getElementById('lblCartCount').innerHTML = totalItems;
         if(totalItems==0){
             document.getElementById('lblCartCount').style.display ="none";
@@ -238,7 +228,6 @@ const navToggle = document.querySelector('.mobile-nav-toggle');
 
 navToggle.addEventListener('click', () => {
     const visibility = primaryNav.getAttribute("data-visible");
-    console.log(visibility);
     if (visibility === "false"){
         primaryNav.setAttribute("data-visible",true);
         navToggle.setAttribute("aria-expanded", true);
@@ -247,17 +236,13 @@ navToggle.addEventListener('click', () => {
         navToggle.setAttribute("aria-expanded",false);
     }
     const visibility2 = primaryNav.getAttribute("data-visible");
-    console.log(visibility2)
 });
 
 function setSellImages(coleccion, cloth){
-    console.log("vamos a poner las imagenes a punto");
     localStorage.setItem("Collection", coleccion);   
     localStorage.setItem("Cloth", cloth);
-    console.log(localStorage.Cloth);
     storeCol = coleccion;
     storeClo = cloth;
-    
 }
 
 function setCollection(coleccion){
@@ -270,9 +255,6 @@ paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
         
     createOrder: (data, actions) => {
-        //console.log(JSON.stringify(modelo),sendNetEntities(lista))
-        console.log("paypal items al formalizar compra",lista)
-        console.log(JSON.stringify(lista))
         return actions.order.create({
             purchase_units: [{
                 "amount": {
@@ -297,7 +279,6 @@ paypal.Buttons({
     onApprove: (data, actions) => {
     return actions.order.capture().then(function(orderData) {
         // Successful capture! For dev/demo purposes:
-        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
         const transaction = orderData.purchase_units[0].payments.captures[0];
         //alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
         // When ready to go live, remove the alert and show a success message within this page. For example:
@@ -308,7 +289,6 @@ paypal.Buttons({
         var nombrepila = orderData.payer.name.given_name;
         var direccionCliente = orderData.payer.email_address;
 
-        console.log("direccion cliente: "+direccionCliente);
         Email.send({
             SecureToken : "c777db29-0be1-40f7-b6ac-937270378585",
             To : direccionCliente,
