@@ -230,7 +230,6 @@ function doShowAll() {
 
 function SaveItem() {
     var newData
-    
     var itemSizeSelector = document.getElementById("itemSize");
     var itemSize = itemSizeSelector.value;
     var name = Cloths[parseInt(curentCollection)][parseInt(currentCloth)] + " (coleccion: " + Collections[parseInt(curentCollection)] + ")" + " - " +itemSize;
@@ -238,6 +237,9 @@ function SaveItem() {
     var amount = itemAmountSelector.value
     if (amount == ''){
         amount = 1;
+        alert("talla "+itemSize+" añadida al carrito");
+    }else{
+        alert(amount+' prendas "'+ name +'" '+ "añadidas al carrito")
     }
     if(parseInt(localStorage.getItem(name)) > 0 && parseInt(localStorage.getItem(name)) < 99){
         amount = parseInt(amount) + parseInt(localStorage.getItem(name))
