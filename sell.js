@@ -82,6 +82,15 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
                 ["empty", "Pelele bebe", "Vestido", "Peto"],
                 ["empty","Jersey animales"]];
+const ProdDesc = [["empty"],
+                ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
+                ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
+                ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
+                ["empty","Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico"],
+                ["empty","Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico"],
+                ["empty","Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico"],
+                ["empty", "tela que cambia su dibujo segun si esta en la sombra o al sol", "tela que cambia su dibujo segun si esta en la sombra o al sol", "tela que cambia su dibujo segun si esta en la sombra o al sol"],
+                ["empty","Prenda de algodon orgánico"]];
 
 try {
     var tallas = tallaPrenda();
@@ -296,6 +305,7 @@ function setCollection(coleccion){
 document.getElementById('htmlConjunto').innerHTML = Cloths[parseInt(curentCollection)][parseInt(currentCloth)];
 document.getElementById('htmlColeccion').innerHTML = "Colección " + Collections[parseInt(curentCollection)]
 document.getElementById('htmlPrecio').innerHTML = Prices[parseInt(curentCollection)][parseInt(currentCloth)] + " €";
+document.getElementById('htmlDescripcion').innerHTML = ProdDesc[parseInt(curentCollection)][parseInt(currentCloth)];
 
 paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
