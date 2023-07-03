@@ -12,11 +12,11 @@ const Prices = [["empty"],
                 ["empty","17.5","13.9","20.9","13.9"],
                 ["empty","9.9","14.9","14.9"],
                 ["empty","17.5","21","14","14"],
-                ["empty","23.9","23.9","27.9","17.9"],
-                ["empty","23.9","23.9","27.9","27.9"],
-                ["empty","23.9","23.9","29.9","27.9"],
-                ["empty","23.9","27.9","27.9"],
-                ["empty","19.9"]];
+                ["empty","16.9","16.9","19.9","12.9"],
+                ["empty","16.9","16.9","19.9","19.9"],
+                ["empty","16.9","16.9","29.9","19.9"],
+                ["empty","16.9","19.9","19.9"],
+                ["empty","13.9"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
                 ["empty","Pantalón","Vestido","Peto"],
@@ -69,7 +69,7 @@ function fotosColeccion() {
     var html = " "
     for (let indx = 1; indx < Cloths[parseInt(localStorage.Collection)].length; indx++) {
         html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br>';
-        if (parseInt(localStorage.Collection) < 4){
+        if (true){//parseInt(localStorage.Collection) < 4
             let old_price = parseInt(parseFloat(Prices[parseInt(localStorage.Collection)][indx])/(0.7));
             html += '<p id="p_old_price"><s>'+ old_price +' €</s></p>';
             html += '<p id="p_new_price" style="color: #c70d0d">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
