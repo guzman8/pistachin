@@ -2,6 +2,7 @@ var lista_mail = "";
 var list = "";
 var paypalItems = new Array();
 var lista =  doShowAll();
+var precioEnvio;
 
 /*modelo: [{
     name: string,
@@ -196,6 +197,11 @@ function doShowAll() {
                 envio = true;
             }
         }
+        if (summ>79.9){
+            precioEnvio=0;
+        }else{
+            precioEnvio=4.9;
+        }
         if (envio) {
             envio = false;
             /*paypalItems.push(new Object({
@@ -207,7 +213,7 @@ function doShowAll() {
                 },
                 "quantity": "1"
             }));*/
-            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + "4.9" + "€</td><td>" + "4.9" + "€</td></tr>";
+            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + precioEnvio + "€</td><td>" + precioEnvio + "€</td></tr>";
             //summ += 4.9;
         }
         document.getElementById('lblCartCount').innerHTML = totalItems;
@@ -222,7 +228,7 @@ function doShowAll() {
         if (list == "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>") {
             list += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
         }else{
-            list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + Math.round((parseFloat(localStorage.payAmount) + 4.9) * 100) / 100 + "€</i></td></tr>"
+            list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + Math.round((parseFloat(localStorage.payAmount) + precioEnvio) * 100) / 100 + "€</i></td></tr>"
         }
         list += "</table>";
         //Bind the data to HTML table.
@@ -244,11 +250,11 @@ function SaveItem() {
     var name = Cloths[parseInt(curentCollection)][parseInt(currentCloth)] + " (coleccion: " + Collections[parseInt(curentCollection)] + ")" + " - " +itemSize;
     var itemAmountSelector = document.getElementById("itemAmount")
     var amount = itemAmountSelector.value
-    if (amount == ''){
+    if (amount == '' || amount == '1'){
         amount = 1;
-        alert("talla "+itemSize+" añadida al carrito");
+        alert("talla "+itemSize+" añadida al carrito. Disfrute de envio gratuito a partir de 80€");
     }else{
-        alert(amount+' prendas "'+ name +'" '+ "añadidas al carrito")
+        alert(amount+' prendas "'+ name +'" '+ "añadidas al carrito. Disfrute de gratuito a partir de 80€")
     }
     if(parseInt(localStorage.getItem(name)) > 0 && parseInt(localStorage.getItem(name)) < 99){
         amount = parseInt(amount) + parseInt(localStorage.getItem(name))
@@ -315,7 +321,7 @@ paypal.Buttons({
             purchase_units: [{
                 "amount": {
                     "currency_code": "EUR",
-                    "value": Math.round((parseFloat(localStorage.payAmount) + 4.9) * 100) / 100,
+                    "value": Math.round((parseFloat(localStorage.payAmount) + precioEnvio) * 100) / 100,
                     "breakdown": {
                         "item_total": {  
                             "currency_code": "EUR",
@@ -323,7 +329,7 @@ paypal.Buttons({
                         },
                         "shipping": {
                             "currency_code": "EUR",
-                            "value": "4.90"
+                            "value": precioEnvio
                         },
                     }
                 },

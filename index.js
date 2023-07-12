@@ -31,6 +31,7 @@ var lista_mail = "";
 var list = "";                
 var paypalItems = new Array();
 var lista =  doShowAll();
+var precioEnvio;
 
 try {
     current_tab();
@@ -147,6 +148,11 @@ var modelo = [
                 envio = true;
             }
         }
+        if (summ>79.9){
+            precioEnvio=0;
+        }else{
+            precioEnvio=4.9;
+        }
         if (envio) {
             envio = false;
             /*paypalItems.push(new Object({
@@ -158,7 +164,7 @@ var modelo = [
                 },
                 "quantity": "1"
             }));*/
-            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + "4.9" + "€</td><td>" + "4.9" + "€</td></tr>";
+            list += "<tr><td>" + "envio" + "</td><td>" + "1" + "</td><td>" + precioEnvio + "€</td><td>" + precioEnvio + "€</td></tr>";
             //summ += 4.9;
         }
         document.getElementById('lblCartCount').innerHTML = totalItems;
@@ -173,7 +179,7 @@ var modelo = [
         if (list == "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>") {
             list += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
         }else{
-            list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + Math.round((parseFloat(localStorage.payAmount) + 4.9) * 100) / 100 + "€</i></td></tr>"
+            list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + Math.round((parseFloat(localStorage.payAmount) + precioEnvio) * 100) / 100 + "€</i></td></tr>"
         }
         list += "</table>";
         //Bind the data to HTML table.
@@ -259,7 +265,7 @@ paypal.Buttons({
             purchase_units: [{
                 "amount": {
                     "currency_code": "EUR",
-                    "value": Math.round((parseFloat(localStorage.payAmount) + 4.9) * 100) / 100,
+                    "value": Math.round((parseFloat(localStorage.payAmount) + precioEnvio) * 100) / 100,
                     "breakdown": {
                         "item_total": {  
                             "currency_code": "EUR",
@@ -267,7 +273,7 @@ paypal.Buttons({
                         },
                         "shipping": {
                             "currency_code": "EUR",
-                            "value": "4.90"
+                            "value": precioEnvio
                         },
                     }
                 },
