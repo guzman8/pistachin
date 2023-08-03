@@ -9,14 +9,14 @@ loadScript({ "client-id": "Ae6_RtNj5FP408yPLC_rU5oS7GDUhDEVeP28akNpOCC_IKhYvtAN4
 });*/
 
 const Prices = [["empty"],
-                ["empty","17.5","13.9","20.9","13.9"],
-                ["empty","9.9","14.9","14.9"],
-                ["empty","17.5","21","14","14"],
-                ["empty","16.9","16.9","19.9","12.9"],
-                ["empty","16.9","16.9","19.9","19.9"],
-                ["empty","16.9","16.9","20.9","19.9"],
-                ["empty","16.9","19.9","19.9"],
-                ["empty","13.9"]];
+                ["empty","12.5","10","16","10"],
+                ["empty","7","10","10"],
+                ["empty","12.5","16","10","10"],
+                ["empty","12","12","15","9"],
+                ["empty","12","12","15","15"],
+                ["empty","12","12","16","15"],
+                ["empty","12","15","15"],
+                ["empty","10"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
                 ["empty","Pantalón","Vestido","Peto"],
@@ -71,7 +71,7 @@ function fotosColeccion() {
     for (let indx = 1; indx < Cloths[parseInt(localStorage.Collection)].length; indx++) {
         html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br>';
         if (true){//parseInt(localStorage.Collection) < 4
-            let old_price = parseInt(parseFloat(Prices[parseInt(localStorage.Collection)][indx])/(0.7));
+            let old_price = parseInt(parseFloat(Prices[parseInt(localStorage.Collection)][indx])/(0.5));
             html += '<p id="p_old_price"><s>'+ old_price +' €</s></p>';
             html += '<p id="p_new_price" style="color: #c70d0d">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
             //document.getElementById('p_new_price').style.color ="#c70d0d";
