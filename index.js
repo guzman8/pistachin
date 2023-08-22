@@ -8,15 +8,16 @@ loadScript({ "client-id": "Ae6_RtNj5FP408yPLC_rU5oS7GDUhDEVeP28akNpOCC_IKhYvtAN4
     console.error("failed to load the PayPal JS SDK script", err);
 });*/
 
+
 const Prices = [["empty"],
-                ["empty","12.5","10","16","10"],
-                ["empty","7","10","10"],
-                ["empty","12.5","16","10","10"],
+                ["empty","15","12","16","15"],
+                ["empty","10","10","12"],
+                ["empty","15","16","15","12"],
                 ["empty","12","12","15","9"],
                 ["empty","12","12","15","15"],
                 ["empty","12","12","16","15"],
                 ["empty","12","15","15"],
-                ["empty","10"]];
+                ["empty","15"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
                 ["empty","Pantalón","Vestido","Peto"],
