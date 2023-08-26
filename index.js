@@ -178,7 +178,7 @@ var modelo = [
         localStorage.setItem("payAmount",summ);
         //If no item exists in the cart.
         if (list == "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>") {
-            list += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
+            list += "<tr><td><i>vacio</i></td><td><i>0</i></td><td><i>0</i></td><td><i>0</i></td></tr>";
         }else{
             list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + Math.round((parseFloat(localStorage.payAmount) + precioEnvio) * 100) / 100 + "€</i></td></tr>"
         }

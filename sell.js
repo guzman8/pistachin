@@ -57,14 +57,14 @@ function current_tab(){
 
 const Collections = ["empty","Nube","Pana","Cerdanya","Menorca","Wild","Sunny","Sailor","Bosque"];
 const Sizes = [["empty"],
-                ["empty",["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses"],["6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"],["3-4 años","4-5 años"]],
-                ["empty",["2-3 años","3-4 años","4-5 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
-                ["empty",["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["2-3 años","3-4 años","4-5 años"],["2-3 años","3-4 años","4-5 años"],["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
-                ["empty",["6-9 meses","9-12 meses","12-18 meses","18-24 meses"],["3 meses","3-6 meses","6-9 meses"],["2-3 años","3-4 años","4-5 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","5-6 años"]],
-                ["empty",["3 meses","3-6 meses","6-9 meses","9-12 meses"],["3 meses","3-6 meses","6-9 meses"],["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
-                ["empty",["3 meses","3-6 meses","6-9 meses","9-12 meses"],["3-6 meses","6-9 meses","9-12 meses"],["2-3 años","3-4 años","4-5 años","5-6 años","6-7 años"],["12-18 meses","18-24 meses","3-4 años","4-5 años","5-6 años"]],
-                ["empty",["3 meses","3-6 meses","6-9 meses"],["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años"],["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
-                ["empty",["6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]]];
+     /*nube*/   ["empty",/*Ranita*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses"],/*Peto*/["6-9 meses","9-12 meses","12-18 meses","18-24 meses"],/*Vestido*/["2-3 años","3-4 años","4-5 años"],/*Polera*/["3-4 años","4-5 años"]],
+     /*Pana*/   ["empty",/*pantalon*/["2-3 años","3-4 años","4-5 años"],/*vestido*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
+ /*Cerdanya*/   ["empty",/*ranita*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años"],/*camisa*/["2-3 años","3-4 años","4-5 años"],/*pelele*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
+  /*Menorca*/   ["empty",/*ranita*/["6-9 meses","9-12 meses","12-18 meses","18-24 meses"],/*pelele*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años"],/*pantalon*/["12-18 meses","18-24 meses","2-3 años","3-4 años","5-6 años"]],
+     /*Wild*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
+    /*Sunny*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3-6 meses","6-9 meses","9-12 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años","5-6 años","6-7 años"],/*peto*/["12-18 meses","18-24 meses","3-4 años","4-5 años","5-6 años"]],
+   /*Sailor*/   ["empty",/*pelel*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años"],/*peto*/["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
+   /*Bosque*/   ["empty",/*jersey*/["6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]]];
 const Prices = [["empty"],
                 ["empty","15","12","16","15"],
                 ["empty","10","10","12"],
@@ -75,14 +75,14 @@ const Prices = [["empty"],
                 ["empty","12","15","15"],
                 ["empty","15"]];
 const Cloths = [["empty"],
-                ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
-                ["empty","Pantalón","Vestido","Peto"],
-                ["empty","Ranita bebe","Vestido","Camisa","Pelele bebe"],
-                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],
-                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
-                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
-                ["empty", "Pelele bebe", "Vestido", "Peto"],
-                ["empty","Jersey animales"]];
+                ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],//Nube
+                ["empty","Pantalón","Vestido","Peto"],//Pana
+                ["empty","Ranita bebe","Vestido","Camisa","Pelele bebe"],//Cerdanya
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],//Menorca
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Wild
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Sunny
+                ["empty", "Pelele bebe", "Vestido", "Peto"],//sailor
+                ["empty","Jersey animales"]];//Bosque
 const ProdDesc = [["empty"],
                 ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
                 ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
@@ -226,7 +226,7 @@ function doShowAll() {
         localStorage.setItem("payAmount",summ);
         //If no item exists in the cart.
         if (list == "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio unitario</th><th>Precio</td></tr>") {
-            list += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
+            list += "<tr><td><i>vacio</i></td><td><i>0</i></td><td><i>0</i></td><td><i>0</i></td></tr>";
         }else{
             list += "<tr><td><i></i></td><td><i></i></td><td><i>Total</i></td><td><i>" + Math.round((parseFloat(localStorage.payAmount) + precioEnvio) * 100) / 100 + "€</i></td></tr>"
         }
