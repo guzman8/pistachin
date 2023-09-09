@@ -50,19 +50,22 @@ function current_tab(){
     for (let index = 0; index < nombres_coleccion.length; index++) {
         nombres_coleccion[index].style.color = "rgb(164, 164, 164)"
     }
+    console.log(localStorage.Collection)   
     //var fileName = window.location.pathname.split("/").pop();
     if (window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "") {
         //home index.html
-    }else if (parseInt(localStorage.Collection)<4) {       
+    }else if (parseInt(localStorage.Collection)>3 ||parseInt(localStorage.Collection)<1) {    
         if (parseInt(localStorage.Collection)==0) {
-            nombres_coleccion[6].style.color = "rgb(0, 0, 0)";
-        }else if (parseInt(localStorage.Collection)==-1) {
-            nombres_coleccion[7].style.color = "rgb(0, 0, 0)";
-        }else{
             nombres_coleccion[5].style.color = "rgb(0, 0, 0)";
+        }else if (parseInt(localStorage.Collection)==-1) {
+            nombres_coleccion[6].style.color = "rgb(0, 0, 0)";
+        }else if (parseInt(localStorage.Collection)==8) {
+            nombres_coleccion[3].style.color = "rgb(0, 0, 0)";
+        }else{
+            nombres_coleccion[4].style.color = "rgb(0, 0, 0)";
         }
     }else{
-        nombres_coleccion[parseInt(localStorage.Collection)-4].style.color = "rgb(0, 0, 0)";
+        nombres_coleccion[parseInt(localStorage.Collection)-1].style.color = "rgb(0, 0, 0)";
     }
     
 }
