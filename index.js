@@ -10,14 +10,14 @@ loadScript({ "client-id": "Ae6_RtNj5FP408yPLC_rU5oS7GDUhDEVeP28akNpOCC_IKhYvtAN4
 
 
 const Prices = [["empty"],
-                ["empty","15","12","16","15"],
+                ["empty","15","15","20","15"],
                 ["empty","10","10","12"],
-                ["empty","15","16","15","12"],
+                ["empty","15","20","15","15"],
                 ["empty","12","12","15","9"],
                 ["empty","12","12","15","15"],
                 ["empty","12","12","16","15"],
                 ["empty","12","15","15"],
-                ["empty","15"]];
+                ["empty","19"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
                 ["empty","Pantalón","Vestido","Peto"],
