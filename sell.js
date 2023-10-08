@@ -57,8 +57,8 @@ function current_tab(){
 
 const Collections = ["empty","Nube","Pana","Cerdanya","Menorca","Wild","Sunny","Sailor","Bosque"];
 const Sizes = [["empty"],
-     /*nube*/   ["empty",/*Ranita*/["1-3 meses","6-9 meses","9-12 meses","12-18 meses"],/*Peto*/["6-9 meses","9-12 meses","12-18 meses","18-24 meses"],/*Vestido*/["2-3 años","3-4 años","4-5 años"],/*Polera*/["3-4 años"]],
-     /*Pana*/   ["empty",/*pantalon*/["2-3 años","3-4 años","4-5 años"],/*vestido*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
+     /*nube*/   ["empty",/*Ranita*/["1-3 meses","6-9 meses","9-12 meses","12-18 meses"],/*Peto*/["6-9 meses","9-12 meses","12-18 meses","18-24 meses"],/*Vestido*/["2-3 años","3-4 años","4-5 años"],/*Polera*/["agotado"]],
+     /*Pana*/   ["empty",/*pantalon*/["2-3 años","3-4 años","4-5 años"],/*vestido*/["agotado"],/*peto*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
  /*Cerdanya*/   ["empty",/*ranita*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años"],/*camisa*/["2-3 años","3-4 años","4-5 años"],/*pelele*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
   /*Menorca*/   ["empty",/*ranita*/["6-9 meses","9-12 meses","12-18 meses","18-24 meses"],/*pelele*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años"],/*pantalon*/["12-18 meses","18-24 meses","2-3 años","5-6 años"]],
      /*Wild*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["12-18 meses","18-24 meses","2-3 años","4-5 años","5-6 años"]],
@@ -247,24 +247,26 @@ function SaveItem() {
     var newData
     var itemSizeSelector = document.getElementById("itemSize");
     var itemSize = itemSizeSelector.value;
-    var name = Cloths[parseInt(curentCollection)][parseInt(currentCloth)] + " (coleccion: " + Collections[parseInt(curentCollection)] + ")" + " - " +itemSize;
-    var itemAmountSelector = document.getElementById("itemAmount")
-    var amount = itemAmountSelector.value
-    if (amount == '' || amount == '1'){
-        amount = 1;
-        alert("talla "+itemSize+" añadida al carrito. Disfrute de envio gratuito a partir de 80€");
-    }else{
-        alert(amount+' prendas "'+ name +'" '+ "añadidas al carrito. Disfrute de gratuito a partir de 80€")
-    }
-    if(parseInt(localStorage.getItem(name)) > 0 && parseInt(localStorage.getItem(name)) < 99){
-        amount = parseInt(amount) + parseInt(localStorage.getItem(name))
-    }
+    if(itemSize != "agotado"){
+          console.log(itemSize.value != "agotado");
+        var name = Cloths[parseInt(curentCollection)][parseInt(currentCloth)] + " (coleccion: " + Collections[parseInt(curentCollection)] + ")" + " - " +itemSize;
+        var itemAmountSelector = document.getElementById("itemAmount")
+        var amount = itemAmountSelector.value
+        if (amount == '' || amount == '1'){
+            amount = 1;
+            alert("talla "+itemSize+" añadida al carrito. Disfrute de envio gratuito a partir de 80€");
+        }else{
+            alert(amount+' prendas "'+ name +'" '+ "añadidas al carrito. Disfrute de gratuito a partir de 80€")
+        }
+        if(parseInt(localStorage.getItem(name)) > 0 && parseInt(localStorage.getItem(name)) < 99){
+            amount = parseInt(amount) + parseInt(localStorage.getItem(name))
+        }
 
-    localStorage.setItem(name, amount);
-    var cashname = "$"+name;
-    localStorage.setItem(cashname,Prices[parseInt(curentCollection)][parseInt(currentCloth)]);
-    doShowAll();
-
+        localStorage.setItem(name, amount);
+        var cashname = "$"+name;
+        localStorage.setItem(cashname,Prices[parseInt(curentCollection)][parseInt(currentCloth)]);
+        doShowAll();
+    }
 }
 
 //Change an existing key-value in HTML5 storage.
