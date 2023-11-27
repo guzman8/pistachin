@@ -64,7 +64,7 @@ const Sizes = [["empty"],
      /*Wild*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["12-18 meses","18-24 meses","2-3 años","4-5 años","5-6 años"]],
     /*Sunny*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses"],/*pelele*/["3-6 meses","6-9 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["12-18 meses","18-24 meses","4-5 años","5-6 años"]],
    /*Sailor*/   ["empty",/*pelel*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años"],/*peto*/["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
-   /*Bosque*/   ["empty",/*jersey*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4 años","6 años (preventa)","8 años (preventa)"]]];
+   /*Bosque*/   ["empty",/*jersey*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4 años","6-8 años","8-10 años"]]];
 const Prices = [["empty"],
                 ["empty","15","15","20","15"],
                 ["empty","10","10","12"],
