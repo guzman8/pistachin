@@ -17,7 +17,8 @@ const Prices = [["empty"],
                 ["empty","12","12","15","15"],
                 ["empty","12","12","16","15"],
                 ["empty","12","15","15"],
-                ["empty","19"]];
+                ["empty","19"],
+                ["empty","22.9","24.9"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
                 ["empty","Pantalón","Vestido","Peto"],
@@ -26,7 +27,8 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
                 ["empty", "Pelele bebe", "Vestido", "Peto"],
-                ["empty","Jersey animales"]];
+                ["empty","Jersey animales"],
+                ["empty","Sudadera solidaria Usher 1B (infantil)", "Sudadera solidaria Usher 1B (juvenil)"]];
 
 var lista_mail = "";
 var list = "";                
@@ -54,18 +56,18 @@ function current_tab(){
     //var fileName = window.location.pathname.split("/").pop();
     if (window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "") {
         //home index.html
-    }else if (parseInt(localStorage.Collection)>3 ||parseInt(localStorage.Collection)<1) {    
+    }else if (parseInt(localStorage.Collection)<4 ||parseInt(localStorage.Collection)>7) {    
         if (parseInt(localStorage.Collection)==0) {
-            nombres_coleccion[5].style.color = "rgb(0, 0, 0)";
-        }else if (parseInt(localStorage.Collection)==-1) {
             nombres_coleccion[6].style.color = "rgb(0, 0, 0)";
-        }else if (parseInt(localStorage.Collection)==8) {
-            nombres_coleccion[3].style.color = "rgb(0, 0, 0)";
-        }else{
+        }else if (parseInt(localStorage.Collection)==-1) {
+            nombres_coleccion[7].style.color = "rgb(0, 0, 0)";
+        }else if (parseInt(localStorage.Collection)==9) {
             nombres_coleccion[4].style.color = "rgb(0, 0, 0)";
+        }else{
+            nombres_coleccion[5].style.color = "rgb(0, 0, 0)";
         }
     }else{
-        nombres_coleccion[parseInt(localStorage.Collection)-1].style.color = "rgb(0, 0, 0)";
+        nombres_coleccion[parseInt(localStorage.Collection)-4].style.color = "rgb(0, 0, 0)";
     }
     
 }

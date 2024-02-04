@@ -41,11 +41,17 @@ function current_tab(){
     for (let index = 0; index < nombres_coleccion.length; index++) {
         nombres_coleccion[index].style.color = "rgb(164, 164, 164)"
     }
-    if (parseInt(localStorage.Collection)<4) {
+    console.log(localStorage.Collection)   
+    //var fileName = window.location.pathname.split("/").pop();
+    if (window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "") {
+        //home index.html
+    }else if (parseInt(localStorage.Collection)<4 ||parseInt(localStorage.Collection)>7) {    
         if (parseInt(localStorage.Collection)==0) {
             nombres_coleccion[6].style.color = "rgb(0, 0, 0)";
         }else if (parseInt(localStorage.Collection)==-1) {
             nombres_coleccion[7].style.color = "rgb(0, 0, 0)";
+        }else if (parseInt(localStorage.Collection)==9) {
+            nombres_coleccion[4].style.color = "rgb(0, 0, 0)";
         }else{
             nombres_coleccion[5].style.color = "rgb(0, 0, 0)";
         }
@@ -55,7 +61,7 @@ function current_tab(){
     
 }
 
-const Collections = ["empty","Nube","Pana","Cerdanya","Menorca","Wild","Sunny","Sailor","Bosque"];
+const Collections = ["empty","Nube","Pana","Cerdanya","Menorca","Wild","Sunny","Sailor","Bosque","Colors"];
 const Sizes = [["empty"],
      /*nube*/   ["empty",/*Ranita*/["1-3 meses","6-9 meses","9-12 meses","12-18 meses"],/*Peto*/["6-9 meses","9-12 meses","12-18 meses"],/*Vestido*/["2-3 años","3-4 años","4-5 años"],/*Polera*/["agotado"]],
      /*Pana*/   ["empty",/*pantalon*/["2-3 años","3-4 años","4-5 años"],/*vestido*/["agotado"],/*peto*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
@@ -64,7 +70,8 @@ const Sizes = [["empty"],
      /*Wild*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["12-18 meses","18-24 meses","2-3 años","4-5 años","5-6 años"]],
     /*Sunny*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses"],/*pelele*/["3-6 meses","6-9 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["12-18 meses","18-24 meses","4-5 años","5-6 años"]],
    /*Sailor*/   ["empty",/*pelel*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años"],/*peto*/["12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]],
-   /*Bosque*/   ["empty",/*jersey*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4 años","6-8 años","8-10 años"]]];
+   /*Bosque*/   ["empty",/*jersey*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4 años","6-8 años","8-10 años"]],
+   /*Colors*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-10 años"],/*sudadera juvenil*/["S","M","L"]]];
 const Prices = [["empty"],
                 ["empty","15","15","20","15"],
                 ["empty","10","10","12"],
@@ -73,7 +80,8 @@ const Prices = [["empty"],
                 ["empty","12","12","15","15"],
                 ["empty","12","12","16","15"],
                 ["empty","12","15","15"],
-                ["empty","19"]];
+                ["empty","19"],
+                ["empty","22.9","24.9"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],//Nube
                 ["empty","Pantalón","Vestido","Peto"],//Pana
@@ -82,7 +90,8 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Wild
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Sunny
                 ["empty", "Pelele bebe", "Vestido", "Peto"],//sailor
-                ["empty","Jersey animales"]];//Bosque
+                ["empty","Jersey animales"],//Bosque
+                ["empty","Sudadera solidaria Usher 1B (infantil)","Sudadera solidaria Usher 1B (juvenil)"]];//Colors
 const ProdDesc = [["empty"],
                 ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
                 ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
@@ -90,8 +99,9 @@ const ProdDesc = [["empty"],
                 ["empty","Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico"],
                 ["empty","Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico"],
                 ["empty","Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico"],
-                ["empty", "tela que cambia su dibujo segun si esta en la sombra o al sol", "tela que cambia su dibujo segun si esta en la sombra o al sol", "tela que cambia su dibujo segun si esta en la sombra o al sol"],
-                ["empty","Prenda de algodon orgánico"]];
+                ["empty","tela que cambia su dibujo segun si esta en la sombra o al sol", "tela que cambia su dibujo segun si esta en la sombra o al sol", "tela que cambia su dibujo segun si esta en la sombra o al sol"],
+                ["empty","Prenda de algodon orgánico"],
+                ["empty","Esta sudadera es solidaria, con tu compra estás haciendo una donación para ayudar a encontrar un tratamiento para el Síndrome de Usher 1B. Porque ningún niño debería dejar nunca de ver la vida llena de color.", "Esta sudadera es solidaria, con tu compra estás haciendo una donación para ayudar a encontrar un tratamiento para el Síndrome de Usher 1B. Porque ningún niño debería dejar nunca de ver la vida llena de color."]];
 
 try {
     var tallas = tallaPrenda();
