@@ -76,7 +76,7 @@ function fotosColeccion() {
     var html = " "
     for (let indx = 1; indx < Cloths[parseInt(localStorage.Collection)].length; indx++) {
         html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br>';
-        if (true){//parseInt(localStorage.Collection) < 4
+        if (parseInt(localStorage.Collection) < 9){//parseInt(localStorage.Collection) < 4
             let old_price = parseInt(parseFloat(Prices[parseInt(localStorage.Collection)][indx])/(0.5));
             html += '<p id="p_old_price"><s>'+ old_price +' €</s></p>';
             html += '<p id="p_new_price" style="color: #c70d0d">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
