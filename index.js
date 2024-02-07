@@ -28,7 +28,7 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
                 ["empty", "Pelele bebe", "Vestido", "Peto"],
                 ["empty","Jersey animales"],
-                ["empty","Sudadera solidaria Usher 1B (infantil)", "Sudadera solidaria Usher 1B (juvenil)"]];
+                ["empty","Sudadera solidaria Usher 1B (infantil)", "Sudadera solidaria Usher 1B (adulto)"]];
 
 var lista_mail = "";
 var list = "";                

@@ -91,7 +91,7 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Sunny
                 ["empty", "Pelele bebe", "Vestido", "Peto"],//sailor
                 ["empty","Jersey animales"],//Bosque
-                ["empty","Sudadera solidaria Usher 1B (infantil)","Sudadera solidaria Usher 1B (juvenil)"]];//Colors
+                ["empty","Sudadera solidaria Usher 1B (infantil)","Sudadera solidaria Usher 1B (adulto)"]];//Colors
 const ProdDesc = [["empty"],
                 ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
                 ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
