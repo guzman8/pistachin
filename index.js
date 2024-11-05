@@ -10,14 +10,14 @@ loadScript({ "client-id": "Ae6_RtNj5FP408yPLC_rU5oS7GDUhDEVeP28akNpOCC_IKhYvtAN4
 
 
 const Prices = [["empty"],
-                ["empty","15","15","20","15"],
-                ["empty","10","10","12"],
-                ["empty","15","20","15","15"],
-                ["empty","12","12","15","9"],
-                ["empty","12","12","15","15"],
-                ["empty","12","12","16","15"],
-                ["empty","12","15","15"],
-                ["empty","19"],
+                ["empty","10","10","10","10"],
+                ["empty","5","10","5"],
+                ["empty","10","10","10","10"],
+                ["empty","10","10","10","5"],
+                ["empty","10","10","10","10"],
+                ["empty","10","10","10","10"],
+                ["empty","10","10","10"],
+                ["empty","10"],
                 ["empty","22.9","24.9"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
@@ -37,7 +37,8 @@ var lista =  doShowAll();
 var precioEnvio;
 
 try {
-    current_tab();
+    //current_tab();
+    console.log("hola")
     var fotos_Coleccion = fotosColeccion();
     document.getElementById('HTMLproductos').innerHTML = fotos_Coleccion;
     localStorage.Cloth = "01";
@@ -74,6 +75,7 @@ function current_tab(){
 
 function fotosColeccion() {
     var html = " "
+    console.log("hola")
     for (let indx = 1; indx < Cloths[parseInt(localStorage.Collection)].length; indx++) {
         html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br>';
         if (parseInt(localStorage.Collection) < 9){//parseInt(localStorage.Collection) < 4
