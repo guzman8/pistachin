@@ -18,6 +18,8 @@ const Prices = [["empty"],
                 ["empty","10","10","10","10"],
                 ["empty","10","10","10"],
                 ["empty","10"],
+                ["empty","22.9","24.9"],
+                ["empty","24.9","24.9","29.9","19.9"],
                 ["empty","22.9","24.9"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
@@ -28,7 +30,10 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
                 ["empty", "Pelele bebe", "Vestido", "Peto"],
                 ["empty","Jersey animales"],
-                ["empty","Sudadera solidaria Usher 1B (infantil)", "Sudadera solidaria Usher 1B (adulto)"]];
+                ["empty","Sudadera solidaria Usher 1B (infantil)", "Sudadera solidaria Usher 1B (adulto)"],
+                ["empty","Ranita bebe","Pelele bebe","Vestido","Polera"],
+                ["empty","Sudadera everest (infantil)", "Sudadera everest (adulto)"]];
+
 
 var lista_mail = "";
 var list = "";                
@@ -44,6 +49,7 @@ try {
     localStorage.Cloth = "01";
     
   } catch (error) {
+    console.log(error)   
     // Expected output: ReferenceError: nonExistentFunction is not defined
     // (Note: the exact output may be browser-dependent)
 }
@@ -75,7 +81,10 @@ function current_tab(){
 
 function fotosColeccion() {
     var html = " "
-    console.log("hola")
+    console.log("hola", Cloths[parseInt(localStorage.Collection)])
+    var precio = parseInt(localStorage.Collection);
+    precio =Prices[precio][1]
+    console.log(precio)
     for (let indx = 1; indx < Cloths[parseInt(localStorage.Collection)].length; indx++) {
         html += '<div><a href="sell.html" onclick="setSellImages(' + "'" + localStorage.Collection + "','0" + indx + "'" + ')"><img id="collectionImages" src="'+ localStorage.Collection + '/0' + indx +'/02.jpeg" alt=""></a><br>';
         if (parseInt(localStorage.Collection) < 9){//parseInt(localStorage.Collection) < 4
@@ -87,7 +96,7 @@ function fotosColeccion() {
             html += '<p id="p_new_price"  style="color: black">'+ Prices[parseInt(localStorage.Collection)][indx] +' €</p><p id="nombre_prenda">'+ Cloths[parseInt(localStorage.Collection)][indx] +'</p></div>';
             //document.getElementById('p_new_price').style.color ="black";
         }
-        
+        console.log(html)
     }
     return html;
 }

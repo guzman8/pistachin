@@ -34,7 +34,7 @@ var modelo = [
     },
   ];
 
-current_tab();
+//current_tab();
 
 function current_tab(){
     const nombres_coleccion = document.getElementsByClassName('col_name')
@@ -61,7 +61,7 @@ function current_tab(){
     
 }
 
-const Collections = ["empty","Nube","Pana","Cerdanya","Menorca","Wild","Sunny","Sailor","Bosque","Colors"];
+const Collections = ["empty","Nube","Pana","Cerdanya","Menorca","Wild","Sunny","Sailor","Bosque","Colors","Wood","Everest"];
 const Sizes = [["empty"],
      /*nube*/   ["empty",/*Ranita*/["1-3 meses","6-9 meses","9-12 meses","12-18 meses"],/*Peto*/["6-9 meses","9-12 meses","12-18 meses"],/*Vestido*/["2-3 años","3-4 años","4-5 años"],/*Polera*/["agotado"]],
      /*Pana*/   ["empty",/*pantalon*/["2-3 años","3-4 años","4-5 años"],/*vestido*/["agotado"],/*peto*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
@@ -71,7 +71,9 @@ const Sizes = [["empty"],
     /*Sunny*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses"],/*pelele*/["1-3 meses"],/*vestido*/["agotado"],/*peto*/["agotado"]],
    /*Sailor*/   ["empty",/*pelel*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años"],/*peto*/["9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años"]],
    /*Bosque*/   ["empty",/*jersey*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4 años","6-8 años","8-10 años"]],
-   /*Colors*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-10 años"],/*sudadera juvenil*/["L"]]];
+   /*Colors*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-10 años"],/*sudadera juvenil*/["L"]],
+     /*Wood*/   ["empty",/*ranita*/["3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3-6 meses","6-9 meses","9-12 meses"],/*vestido*/["12-18 meses","2-3 años","3-4 años","4-5 años","6 años","7 años"],/*polera*/["12-18 meses","2-3 años","3-4 años","4-5 años","6 años","7 años"]],
+   /*Colors*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-9 años"],/*sudadera adulto*/["M"]]]
 
 const Prices = [["empty"],
                 ["empty","10","10","10","10"],
@@ -82,6 +84,8 @@ const Prices = [["empty"],
                 ["empty","10","10","10","10"],
                 ["empty","10","10","10"],
                 ["empty","10"],
+                ["empty","22.9","24.9"],
+                ["empty","24.9","24.9","29.9","19.9"],
                 ["empty","22.9","24.9"]];
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],//Nube
@@ -92,17 +96,21 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Sunny
                 ["empty", "Pelele bebe", "Vestido", "Peto"],//sailor
                 ["empty","Jersey animales"],//Bosque
-                ["empty","Sudadera solidaria Usher 1B (infantil)","Sudadera solidaria Usher 1B (adulto)"]];//Colors
+                ["empty","Sudadera solidaria Usher 1B (infantil)","Sudadera solidaria Usher 1B (adulto)"],//colors
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Polera"],//Wood
+                ["empty","Sudadera Everest (infantil)","Sudadera Everest (adulto)"]];//Everest
 const ProdDesc = [["empty"],
-                ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
-                ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
-                ["empty","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico","Prenda de algodon orgánico"],
-                ["empty","Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico"],
-                ["empty","Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico"],
-                ["empty","Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico", "Prenda de algodon orgánico"],
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico"],
                 ["empty","tela que cambia su dibujo segun si esta en la sombra o al sol", "tela que cambia su dibujo segun si esta en la sombra o al sol", "tela que cambia su dibujo segun si esta en la sombra o al sol"],
-                ["empty","Prenda de algodon orgánico"],
-                ["empty","Esta sudadera es solidaria, con tu compra estás haciendo una donación para ayudar a encontrar un tratamiento para el Síndrome de Usher 1B. Porque ningún niño debería dejar nunca de ver la vida llena de color.", "Esta sudadera es solidaria, con tu compra estás haciendo una donación para ayudar a encontrar un tratamiento para el Síndrome de Usher 1B. Porque ningún niño debería dejar nunca de ver la vida llena de color."]];
+                ["empty","Prenda de algodón orgánico"],
+                ["empty","Esta sudadera es solidaria, con tu compra estás haciendo una donación para ayudar a encontrar un tratamiento para el Síndrome de Usher 1B. Porque ningún niño debería dejar nunca de ver la vida llena de color.", "Esta sudadera es solidaria, con tu compra estás haciendo una donación para ayudar a encontrar un tratamiento para el Síndrome de Usher 1B. Porque ningún niño debería dejar nunca de ver la vida llena de color."],           
+                ["empty","Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico"]];
 
 try {
     var tallas = tallaPrenda();
