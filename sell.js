@@ -65,15 +65,15 @@ const Collections = ["empty","Nube","Pana","Cerdanya","Menorca","Wild","Sunny","
 const Sizes = [["empty"],
      /*nube*/   ["empty",/*Ranita*/["1-3 meses","6-9 meses","9-12 meses","12-18 meses"],/*Peto*/["6-9 meses","9-12 meses","12-18 meses"],/*Vestido*/["2-3 años","3-4 años","4-5 años"],/*Polera*/["agotado"]],
      /*Pana*/   ["empty",/*pantalon*/["2-3 años","3-4 años","4-5 años"],/*vestido*/["agotado"],/*peto*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
- /*Cerdanya*/   ["empty",/*ranita*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años"],/*camisa*/["2-3 años","3-4 años"],/*pelele*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
+ /*Cerdanya*/   ["empty",/*ranita*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años"],/*camisa*/["2-3 años"],/*pelele*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
   /*Menorca*/   ["empty",/*ranita*/["6-9 meses","12-18 meses","18-24 meses"],/*pelele*/["1-2 meses","3 meses"],/*vestido*/["agotado"],/*pantalon*/["12-18 meses"]],
      /*Wild*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["9-12 meses","12-18 meses","18-24 meses","3-4 meses","4-5 años"]],
     /*Sunny*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses"],/*pelele*/["1-3 meses"],/*vestido*/["agotado"],/*peto*/["agotado"]],
-   /*Sailor*/   ["empty",/*pelel*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años"],/*peto*/["9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años"]],
+   /*Sailor*/   ["empty",/*pelel*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años"],/*peto*/["9-12 meses","18-24 meses","2-3 años","3-4 años"]],
    /*Bosque*/   ["empty",/*jersey*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4 años","6-8 años","8-10 años"]],
    /*Colors*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-10 años"],/*sudadera juvenil*/["L"]],
      /*Wood*/   ["empty",/*ranita*/["3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3-6 meses","6-9 meses","9-12 meses"],/*vestido*/["12-18 meses","2-3 años","3-4 años","4-5 años","6 años","7 años"],/*polera*/["12-18 meses","2-3 años","3-4 años","4-5 años","6 años","7 años"]],
-   /*Colors*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-9 años"],/*sudadera adulto*/["M"]]]
+  /*Everest*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-9 años"],/*sudadera adulto*/["M"]]]
 
 const Prices = [["empty"],
                 ["empty","10","10","10","10"],
