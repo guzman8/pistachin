@@ -4,35 +4,38 @@
   <title>Pistachin kids</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="ropa, niños, conjunto, nube, niño y niña, bebe, kids, pistachin, Tienda">
+  <meta name="description" content="conjunto ropa nube para bebe niños">
   <meta name="author" content="Guzmán Mestre Galofré">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="index.css" rel="stylesheet">
-  <link href="sell.css" rel="stylesheet">
+  <link href="Colecciones.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-  <script src="sell.js" defer></script>
+  <script src="index.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-
+  
 </head>
 <body>
 <div id="myModal" class="modal">
+
   <!-- Modal content -->
   <div class="modal-content">
-    <span id="close-x" class="close">&times;</span>
-    <p>Your checkout:</p>
-    <div id="items_table">
-      <h2>Shopping List</h2>
-      <table id="list"></table>
-    </div>
-    <br>
-    <label><input type="button" value="limpiar" onclick="ClearAll()">
-      * Retirar productos de la cesta
-    </label>
-    <script src="https://www.paypal.com/sdk/js?client-id=Aa8Y4qE5qYaycaz0m3cJtnigOgqWCgd82cU7gXgAIvX1BqH-ObfUp32gYm64eNWvXXLO6aStxQtWCtam&currency=EUR"></script>
-    <!-- Set up a container element for the button -->  
-    <div id="paypal-button-container"></div>
+      <span id="close-x" class="close">&times;</span>
+      <p>Your checkout:</p>
+      <div id="items_table">
+        <h2>Shopping List</h2>
+        <table id="list"></table>
+      </div>
+      <br>
+      <label><input type="button" value="limpiar" onclick="ClearAll()">
+        * Retirar productos de la cesta
+      </label>
+      <script src="https://www.paypal.com/sdk/js?client-id=Aa8Y4qE5qYaycaz0m3cJtnigOgqWCgd82cU7gXgAIvX1BqH-ObfUp32gYm64eNWvXXLO6aStxQtWCtam&currency=EUR"></script>
+      <!-- Set up a container element for the button -->  
+      <div id="paypal-button-container"></div>
+      </div>
   </div>
 </div>
 
@@ -134,32 +137,10 @@
 </script>
 
 <div class="grid-container">
-  <div id="item1"></div>  
-  <div class="item2">
-  	<div><p id="htmlConjunto" style="font-size: 30px;">Conjunto Ranita</p><p id="htmlColeccion" style="font-size: 20px;">Coleccion Cerdaña</p> <br> <p id="htmlDescripcion" style="font-size: 15px;">descripción</p> <br> <p id="htmlPrecio" style="font-size: 20px;">X €</p> </div><br>
-      
-    	<span>
-        Elige talla:
-        <select id="itemSize" name="size" id="size">
-          
-        </select>
-      </span>
-      <br><br>
-      <span>
-        Seleccionar Cantidad:
-        <input id="itemAmount" type="number" min="1" max="10" step="1">
-      </span>
-        <br><br><br>
-        <button onclick="SaveItem()">añadir al carrito</button>
-  	</div>
-  <span class="item3">
-    <!--<span onclick="setPic('01')" class="copy" id="copy1"></span>-->
-    <span onclick="setPic('02')" class="copy" id="copy2"></span>
-    <span onclick="setPic('03')" class="copy" id="copy3"></span>
-    <span onclick="setPic('04')" class="copy" id="copy4"></span>
-    <span onclick="setPic('05')" class="copy" id="copy5"></span>
-    <!--<span><button onclick="setNextPic()">next</button></span>-->
-  </span>
+  <div><a href="Coleccion.html" onclick="setCollection('12')"><img src="12/imagen0.jpeg" alt=""></a></div>
+  <div><a href="Coleccion.html" onclick="setCollection('13')"><img src="13/imagen0.jpeg" alt=""></a></div>
+  <div><a href="Coleccion.html" onclick="setCollection('14')"><img src="14/imagen0.jpeg" alt=""></a></div>
+  <div><a href="Coleccion.html" onclick="setCollection('15')"><img src="15/imagen0.jpeg" alt=""></a></div>
 </div>
   
 <br>

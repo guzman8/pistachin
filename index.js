@@ -20,19 +20,29 @@ const Prices = [["empty"],
                 ["empty","10"],
                 ["empty","22.9","24.9"],
                 ["empty","24.9","24.9","29.9","19.9"],
-                ["empty","22.9","24.9"]];
+                ["empty","22.9","24.9"],
+                ["empty","23.9","27.9"],
+                ["empty","23.9","27.9","27.9"],
+                ["empty","23.9","23.9","27.9","27.9"],
+                ["empty","23.9","23.9","27.9","29.9"],
+            ];
+                
 const Cloths = [["empty"],
-                ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],
-                ["empty","Pantalón","Vestido","Peto"],
-                ["empty","Ranita bebe","Vestido","Camisa","Pelele bebe"],
-                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],
-                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
-                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],
-                ["empty", "Pelele bebe", "Vestido", "Peto"],
-                ["empty","Jersey animales"],
-                ["empty","Sudadera solidaria Usher 1B (infantil)", "Sudadera solidaria Usher 1B (adulto)"],
-                ["empty","Ranita bebe","Pelele bebe","Vestido","Polera"],
-                ["empty","Sudadera everest (infantil)", "Sudadera everest (adulto)"]];
+                ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],//Nube
+                ["empty","Pantalón","Vestido","Peto"],//Pana
+                ["empty","Ranita bebe","Vestido","Camisa","Pelele bebe"],//Cerdanya
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],//Menorca
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Wild
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Sunny
+                ["empty","Pelele bebe", "Vestido", "Peto"],//sailor
+                ["empty","Jersey animales"],//Bosque
+                ["empty","Sudadera solidaria Usher 1B (infantil)","Sudadera solidaria Usher 1B (adulto)"],//colors
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Polera"],//Wood
+                ["empty","Sudadera (infantil)","Sudadera (adulto)"],//everest
+                ["empty","Pelele","Vestido"],//fresh
+                ["empty","Pelele bebe", "Vestido", "Peto"],//whales
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Jungle
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"]];//Formentera
 
 
 var lista_mail = "";

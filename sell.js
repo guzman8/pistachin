@@ -73,7 +73,12 @@ const Sizes = [["empty"],
    /*Bosque*/   ["empty",/*jersey*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4 años","6-8 años","8-10 años"]],
    /*Colors*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-10 años"],/*sudadera juvenil*/["L"]],
      /*Wood*/   ["empty",/*ranita*/["3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3-6 meses","6-9 meses","9-12 meses"],/*vestido*/["12-18 meses","2-3 años","3-4 años","4-5 años","6 años","7 años"],/*polera*/["12-18 meses","2-3 años","3-4 años","4-5 años","6 años","7 años"]],
-  /*Everest*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-9 años"],/*sudadera adulto*/["M"]]]
+  /*Everest*/   ["empty",/*sudadera infantil*/["2-3 años","3-4 años","4-6 años","6-8 años","8-9 años"],/*sudadera adulto*/["M"]],
+    /*Fresh*/   ["empty",/*pelele*/["3-6 meses","6-9 meses","9-12 meses"],/*vestido*/["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"]]
+   /*Whales*/   ["empty",/*pelele*/["3-6 meses","6-9 meses","9-12 meses"],/*vestido*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["9-12 meses","12-18 meses","18-24 meses","3-4 meses","4-5 años"]],
+   /*Jungle*/   ["empty",/*ranita*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],/*pelele*/["3-6 meses","6-9 meses","9-12 meses"],/*vestido*/["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["12-18 meses","18-24 meses","3-4 meses","4-5 años","5-6 años"]],
+/*Formentera*/  ["empty",/*ranita*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses"],/*pelele*/["3-6 meses","6-9 meses","9-12 meses"],/*vestido*/["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["12-18 meses","18-24 meses","3-4 meses","4-5 años","5-6 años"]],
+]
 
 const Prices = [["empty"],
                 ["empty","10","10","10","10"],
@@ -86,7 +91,13 @@ const Prices = [["empty"],
                 ["empty","10"],
                 ["empty","22.9","24.9"],
                 ["empty","24.9","24.9","29.9","19.9"],
-                ["empty","22.9","24.9"]];
+                ["empty","22.9","24.9"],
+                ["empty","23.9","27.9"],
+                ["empty","23.9","27.9","27.9"],
+                ["empty","23.9","23.9","27.9","27.9"],
+                ["empty","23.9","23.9","27.9","29.9"],
+            ];
+                
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],//Nube
                 ["empty","Pantalón","Vestido","Peto"],//Pana
@@ -94,11 +105,16 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],//Menorca
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Wild
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Sunny
-                ["empty", "Pelele bebe", "Vestido", "Peto"],//sailor
+                ["empty","Pelele bebe", "Vestido", "Peto"],//sailor
                 ["empty","Jersey animales"],//Bosque
                 ["empty","Sudadera solidaria Usher 1B (infantil)","Sudadera solidaria Usher 1B (adulto)"],//colors
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Polera"],//Wood
-                ["empty","Sudadera Everest (infantil)","Sudadera Everest (adulto)"]];//Everest
+                ["empty","Sudadera (infantil)","Sudadera (adulto)"],//everest
+                ["empty","Pelele","Vestido"],//fresh
+                ["empty","Pelele bebe", "Vestido", "Peto"],//whales
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Jungle
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"]];//Formentera
+
 const ProdDesc = [["empty"],
                 ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico"],
                 ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico"],
@@ -110,7 +126,11 @@ const ProdDesc = [["empty"],
                 ["empty","Prenda de algodón orgánico"],
                 ["empty","Esta sudadera es solidaria, con tu compra estás haciendo una donación para ayudar a encontrar un tratamiento para el Síndrome de Usher 1B. Porque ningún niño debería dejar nunca de ver la vida llena de color.", "Esta sudadera es solidaria, con tu compra estás haciendo una donación para ayudar a encontrar un tratamiento para el Síndrome de Usher 1B. Porque ningún niño debería dejar nunca de ver la vida llena de color."],           
                 ["empty","Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico"],
-                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico"]];
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico"]];
 
 try {
     var tallas = tallaPrenda();
