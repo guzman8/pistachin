@@ -11,7 +11,7 @@ loadScript({ "client-id": "Ae6_RtNj5FP408yPLC_rU5oS7GDUhDEVeP28akNpOCC_IKhYvtAN4
 
 const Prices = [["empty"],
                 ["empty","10","10","10","10"],
-                ["empty","5","10","5"],
+                ["empty","5","10"],
                 ["empty","10","10","10","10"],
                 ["empty","10","10","10","5"],
                 ["empty","10","10","10","10"],
@@ -29,7 +29,7 @@ const Prices = [["empty"],
                 
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],//Nube
-                ["empty","Pantalón","Vestido","Peto"],//Pana
+                ["empty","Pantalón","Vestido"],//Pana
                 ["empty","Ranita bebe","Vestido","Camisa","Pelele bebe"],//Cerdanya
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],//Menorca
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Wild

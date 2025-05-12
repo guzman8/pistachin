@@ -64,7 +64,7 @@ function current_tab(){
 const Collections = ["empty","Nube","Pana","Cerdanya","Menorca","Wild","Sunny","Sailor","Bosque","Colors","Wood","Everest","Fresh","Whales","Jungle","Formentera"];
 const Sizes = [["empty"],
      /*nube*/   ["empty",/*Ranita*/["1-3 meses","6-9 meses","12-18 meses"],/*Peto*/["6-9 meses","9-12 meses","12-18 meses"],/*Vestido*/["2-3 años","3-4 años"],/*Polera*/["agotado"]],
-     /*Pana*/   ["empty",/*pantalon*/["2-3 años","3-4 años","4-5 años"],/*vestido*/["agotado"],/*peto*/["3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
+     /*Pana*/   ["empty",/*pantalon*/["2-3 años","3-4 años","4-5 años"],/*vestido*/["agotado"]],
  /*Cerdanya*/   ["empty",/*ranita*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses"],/*vestido*/["2-3 años","3-4 años","4-5 años"],/*camisa*/["2-3 años"],/*pelele*/["1-3 meses","3-6 meses","6-9 meses","9-12 meses","12-18 meses","18-24 meses"]],
   /*Menorca*/   ["empty",/*ranita*/["6-9 meses","12-18 meses","18-24 meses"],/*pelele*/["1-2 meses","3 meses"],/*vestido*/["agotado"],/*pantalon*/["12-18 meses"]],
      /*Wild*/   ["empty",/*ranita*/["3 meses","3-6 meses","6-9 meses","9-12 meses"],/*pelele*/["3 meses","3-6 meses","6-9 meses"],/*vestido*/["18-24 meses","2-3 años","3-4 años","4-5 años","5-6 años"],/*peto*/["9-12 meses","12-18 meses","18-24 meses","3-4 meses","4-5 años"]],
@@ -82,7 +82,7 @@ const Sizes = [["empty"],
 
 const Prices = [["empty"],
                 ["empty","10","10","10","10"],
-                ["empty","5","10","5"],
+                ["empty","5","10"],
                 ["empty","10","10","10","10"],
                 ["empty","10","10","10","5"],
                 ["empty","10","10","10","10"],
@@ -100,7 +100,7 @@ const Prices = [["empty"],
                 
 const Cloths = [["empty"],
                 ["empty","Ranita bebe","Peto bebe","Vestido","Polera"],//Nube
-                ["empty","Pantalón","Vestido","Peto"],//Pana
+                ["empty","Pantalón","Vestido"],//Pana
                 ["empty","Ranita bebe","Vestido","Camisa","Pelele bebe"],//Cerdanya
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalón"],//Menorca
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Wild
@@ -117,7 +117,7 @@ const Cloths = [["empty"],
 
 const ProdDesc = [["empty"],
                 ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico"],
-                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico"],
+                ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico"],
                 ["empty","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico","Prenda de algodón orgánico"],
                 ["empty","Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico"],
                 ["empty","Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico", "Prenda de algodón orgánico"],
