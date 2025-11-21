@@ -88,7 +88,7 @@ const Prices = [["empty"],
                 ["empty","10","10","10","10"],
                 ["empty","10","10","10","10"],
                 ["empty","10","10","10"],
-                ["empty","10"],
+                ["empty","17.5"],
                 ["empty","22.9","24.9"],
                 ["empty","17.9","17.9","22.9","19.9"],
                 ["empty","17.9","19.9"],
@@ -106,7 +106,7 @@ const Cloths = [["empty"],
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Wild
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Sunny
                 ["empty","Pelele bebe", "Vestido", "Peto"],//sailor
-                ["empty","Jersey animales"],//Bosque
+                ["empty","Sudadera Bosque"],//Bosque
                 ["empty","Sudadera solidaria Usher 1B (infantil)","Sudadera solidaria Usher 1B (adulto)"],//colors
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Polera"],//Wood
                 ["empty","Sudadera (infantil)","Sudadera (adulto)"],//everest
