@@ -21,10 +21,11 @@ const Prices = [["empty"],
                 ["empty","22.9"],
                 ["empty","17.9","17.9","22.9","19.9"],
                 ["empty","17.9","19.9"],
-                ["empty","23.9","27.9"],
+                ["empty","23.9","23.9","29.9","19.9"],
                 ["empty","23.9","23.9","27.9"],
                 ["empty","23.9","23.9","27.9","27.9"],
                 ["empty","23.9","23.9","29.9","27.9"],
+                ["empty","23.9","23.9","29.9","19.9"]
             ];
                 
 const Cloths = [["empty"],
@@ -39,10 +40,11 @@ const Cloths = [["empty"],
                 ["empty","Sudadera solidaria Usher 1B (infantil)"],//colors
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Polera"],//Wood
                 ["empty","Sudadera (infantil)","Sudadera (adulto)"],//everest
-                ["empty","Pelele","Vestido"],//fresh
+                ["empty","Ranita","Pelele","Vestido","pantalón"],//fresh
                 ["empty","Pelele bebe", "Vestido", "Peto"],//whales
                 ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Jungle
-                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"]];//Formentera
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Peto"],//Formentera
+                ["empty","Ranita bebe", "Pelele bebe", "Vestido", "Pantalon"]];//Sea
 
 
 var lista_mail = "";
